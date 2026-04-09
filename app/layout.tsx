@@ -7,12 +7,19 @@ export const metadata: Metadata = {
   description:
     "AI-powered resume builder. Describe yourself in plain English, get an ATS-optimized resume in seconds. Free to start.",
   keywords: "resume builder, AI resume, ATS checker, portfolio builder",
+  icons: {
+    icon: "/logo.avif",
+    shortcut: "/logo.avif",
+    apple: "/logo.avif",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/logo.avif" type="image/avif" />
+        <link rel="apple-touch-icon" href="/logo.avif" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

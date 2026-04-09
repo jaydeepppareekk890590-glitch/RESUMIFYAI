@@ -7,7 +7,6 @@ import RainbowButton from "@/components/ui/RainbowButton";
 import dynamic from "next/dynamic";
 import { saveATSScore, deductCredit, getResume } from "@/lib/firebase";
 import { resumeDataToText } from "@/lib/ats-algorithm";
-import * as pdfjsLib from "pdfjs-dist";
 
 const GlowingFish = dynamic(() => import("@/components/ui/GlowingFish"), { ssr: false });
 
@@ -137,7 +136,8 @@ function AnalyzerContent() {
   const extractText = async (f: File): Promise<string> => {
     try {
       if (f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf")) {
-        // PDF extraction via pdfjs-dist
+        // PDF extraction via pdfjs-dist dynamically imported to prevent SSR crash (DOMMatrix error)
+        const pdfjsLib = await import("pdfjs-dist");
         pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
         const arrayBuffer = await f.arrayBuffer();
         const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
