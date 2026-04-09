@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parisian Elegance Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Lato', sans-serif; background: #f8f5f0; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.paris-stripe { height: 4px; background: linear-gradient(90deg, #1a1a2e, #c9a96e, #1a1a2e); }
+.header { padding: 28px 40px; display: flex; align-items: flex-start; gap: 24px; border-bottom: 1px solid #e8e0d4; }
+.header-main { flex: 1; }
+.header-main h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #1a1a2e; font-weight: 600; letter-spacing: 1px; }
+.header-main .role { font-size: 11px; color: #c9a96e; letter-spacing: 4px; text-transform: uppercase; margin-top: 5px; }
+.header-main .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: #8a7a60; flex-wrap: wrap; }
+.header-accent { width: 80px; text-align: right; }
+.fleur { font-family: 'Playfair Display', serif; font-size: 40px; color: rgba(201,169,110,0.3); line-height: 1; }
+.body { padding: 22px 40px; display: grid; grid-template-columns: 1fr 200px; gap: 28px; }
+h2 { font-family: 'Playfair Display', serif; font-size: 15px; color: #1a1a2e; margin-bottom: 12px; font-weight: 600; padding-bottom: 5px; border-bottom: 1px solid #e8e0d4; }
+.entry { margin-bottom: 14px; }
+.entry h3 { font-size: 11px; font-weight: 700; color: #1a1a2e; }
+.entry .meta { font-size: 10px; color: #c9a96e; margin: 2px 0; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #6a5a48; line-height: 1.7; }
+.paris-skill { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f0e8d8; font-size: 10px; color: #5a4a38; }
+.paris-skill::before { content: '◆'; color: #c9a96e; font-size: 7px; }
+.summary { font-size: 11px; color: #6a5a48; line-height: 1.7; margin-bottom: 18px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="paris-stripe"></div>
+  <div class="header">
+    <div class="header-main">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">
+        <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+      </div>
+    </div>
+    <div class="header-accent">
+      <div class="fleur">✦</div>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="paris-skill">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="paris-stripe" style="position:absolute;bottom:0;left:0;right:0"></div>
+</div>
+</body>
+</html>

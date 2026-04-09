@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubblegum Pop Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Nunito', sans-serif; background: #fff0f6; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.header { background: linear-gradient(135deg, #ff6b9d, #c44dff, #6ec6ff); padding: 28px 32px; display: flex; align-items: center; gap: 20px; position: relative; }
+.header::after { content: ''; position: absolute; bottom: -16px; left: 0; right: 0; height: 32px; background: #fff; border-radius: 50% 50% 0 0; }
+.header-info h1 { font-family: 'Fredoka One', cursive; font-size: 32px; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+.header-info p { color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600; margin-top: 4px; }
+.header-contact { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.header-contact span { padding: 4px 12px; background: rgba(255,255,255,0.2); border-radius: 20px; font-size: 11px; color: #fff; }
+.body { padding: 32px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+.bubble-section { background: #fdf2f8; border-radius: 16px; padding: 18px; }
+.bubble-section h2 { font-family: 'Fredoka One', cursive; font-size: 16px; color: #c44dff; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.bubble-section h2 span { font-size: 16px; }
+.bubble-item { margin-bottom: 10px; padding-left: 12px; border-left: 3px solid #ff6b9d; font-size: 11px; }
+.bubble-item h3 { font-weight: 700; color: #333; }
+.bubble-item p { color: #777; font-size: 10px; margin-top: 2px; }
+.skill-bubble { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; margin: 3px; color: #fff; background: #ff6b9d; }
+.skill-bubble:nth-child(2) { background: #c44dff; }
+.skill-bubble:nth-child(3) { background: #6ec6ff; }
+.skill-bubble:nth-child(4) { background: #ffd166; }
+.skill-bubble:nth-child(5) { background: #06d6a0; }
+.skill-bubble:nth-child(6) { background: #ef476f; }
+.skill-bubble:nth-child(7) { background: #c44dff; }
+.skill-bubble:nth-child(8) { background: #ff6b9d; }
+.full-width { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="header-info">
+      <h1>{{NAME}}</h1>
+      <p>{{ROLE}}</p>
+      <div class="header-contact">
+        <span>📧 {{EMAIL}}</span>
+        <span>📱 {{PHONE}}</span>
+        <span>📍 {{LOCATION}}</span>
+        <span>🌐 {{LINKEDIN}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="bubble-section">
+      <h2><span>💼</span> Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="bubble-item">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <p>{{EXP_DATE}} | {{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="bubble-section">
+      <h2><span>🎓</span> Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="bubble-item">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <p>{{EDU_YEAR}}</p>
+      </div>
+      <!-- EDUCATION_END -->
+      <h2 style="margin-top:12px"><span>💬</span> Summary</h2>
+      <p style="font-size:11px;color:#777;line-height:1.7">{{SUMMARY}}</p>
+    </div>
+    <div class="bubble-section full-width">
+      <h2><span>⚡</span> Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="skill-bubble">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

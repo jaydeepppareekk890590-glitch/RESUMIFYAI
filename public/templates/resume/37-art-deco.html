@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Deco Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Josefin Sans', sans-serif; background: #1a1a2e; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #0f0f1a; border: 2px solid #c9a84c; position: relative; color: #d4c5a9; overflow: hidden; }
+.deco-corner { position: absolute; width: 30px; height: 30px; }
+.deco-corner::before, .deco-corner::after { content: ''; position: absolute; background: #c9a84c; }
+.dc-tl { top: 10px; left: 10px; } .dc-tl::before { top: 0; left: 0; width: 30px; height: 2px; } .dc-tl::after { top: 0; left: 0; width: 2px; height: 30px; }
+.dc-tr { top: 10px; right: 10px; } .dc-tr::before { top: 0; right: 0; width: 30px; height: 2px; } .dc-tr::after { top: 0; right: 0; width: 2px; height: 30px; }
+.dc-bl { bottom: 10px; left: 10px; } .dc-bl::before { bottom: 0; left: 0; width: 30px; height: 2px; } .dc-bl::after { bottom: 0; left: 0; width: 2px; height: 30px; }
+.dc-br { bottom: 10px; right: 10px; } .dc-br::before { bottom: 0; right: 0; width: 30px; height: 2px; } .dc-br::after { bottom: 0; right: 0; width: 2px; height: 30px; }
+.inner { padding: 28px 36px; }
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { font-family: 'Poiret One', cursive; font-size: 40px; color: #c9a84c; letter-spacing: 8px; }
+.header .diamonds { font-size: 12px; color: #c9a84c; margin: 6px 0; letter-spacing: 8px; }
+.header .role { font-size: 10px; letter-spacing: 6px; color: rgba(201,168,76,0.6); text-transform: uppercase; }
+.header .contact { font-size: 10px; color: rgba(212,197,169,0.4); margin-top: 10px; letter-spacing: 2px; }
+.art-deco-line { height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); margin: 16px 0; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+h2 { font-family: 'Poiret One', cursive; font-size: 18px; color: #c9a84c; margin-bottom: 12px; text-align: center; letter-spacing: 4px; }
+.entry { margin-bottom: 12px; text-align: center; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #e8dcc8; letter-spacing: 1px; }
+.entry .meta { font-size: 9px; color: #c9a84c; letter-spacing: 3px; margin: 3px 0 5px; }
+.entry p { font-size: 10px; color: rgba(212,197,169,0.5); line-height: 1.7; }
+.skills-deco { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px; }
+.skills-deco span { padding: 4px 14px; border: 1px solid rgba(201,168,76,0.3); font-size: 9px; color: #c9a84c; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="deco-corner dc-tl"></div><div class="deco-corner dc-tr"></div>
+  <div class="deco-corner dc-bl"></div><div class="deco-corner dc-br"></div>
+  <div class="inner">
+    <div class="header">
+      <h1>{{NAME}}</h1>
+      <div class="diamonds">◆ ◆ ◆</div>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}} · {{PHONE}} · {{LOCATION}} · {{LINKEDIN}}</div>
+    </div>
+    <p style="font-size:10px;color:rgba(212,197,169,0.5);text-align:center;line-height:1.7;margin-bottom:14px">{{SUMMARY}}</p>
+    <div class="art-deco-line"></div>
+    <div class="grid">
+      <div>
+        <h2>Positions</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+          <div class="meta">{{EDU_YEAR}}</div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <div class="skills-deco">
+          <!-- SKILLS_START -->
+          <span>{{SKILL_NAME}}</span>
+          <!-- SKILLS_END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

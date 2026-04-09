@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavender Dream Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Hind', sans-serif; background: #f5f0ff; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.header { background: linear-gradient(135deg, #b794f4, #9f7aea, #805ad5); padding: 28px 36px; color: #fff; }
+.header h1 { font-family: 'Philosopher', serif; font-size: 30px; font-weight: 700; letter-spacing: 1px; }
+.header .role { font-size: 11px; opacity: 0.85; letter-spacing: 2px; margin-top: 4px; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; opacity: 0.75; flex-wrap: wrap; }
+.lavender-strip { height: 4px; background: linear-gradient(90deg, #b794f4, #9f7aea, #e9d8fd); }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 210px; gap: 24px; }
+h2 { font-family: 'Philosopher', serif; font-size: 15px; color: #553c9a; margin-bottom: 12px; }
+.entry { margin-bottom: 13px; border-left: 3px solid #e9d8fd; padding-left: 12px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #2d3748; }
+.entry .meta { font-size: 10px; color: #9f7aea; margin: 2px 0; }
+.entry p { font-size: 10px; color: #666; line-height: 1.7; }
+.lav-skill { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f5f0ff; font-size: 10px; color: #553c9a; }
+.edu-item { margin-bottom: 10px; }
+.edu-item h3 { font-size: 11px; font-weight: 600; color: #553c9a; }
+.edu-item .meta { font-size: 10px; color: #9f7aea; }
+.summary { font-size: 11px; color: #666; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="lavender-strip"></div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="lav-skill">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="edu-item">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

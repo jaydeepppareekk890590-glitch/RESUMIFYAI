@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monochrome Prestige Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Work Sans', sans-serif; background: #f5f5f5; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.top-band { height: 180px; background: #111; display: flex; align-items: center; justify-content: center; gap: 32px; padding: 0 44px; position: relative; }
+.name-block { color: #fff; }
+.name-block .pre { font-size: 9px; letter-spacing: 8px; color: #666; text-transform: uppercase; margin-bottom: 6px; }
+.name-block h1 { font-family: 'Tenor Sans', serif; font-size: 40px; font-weight: 400; letter-spacing: 4px; line-height: 1.1; }
+.name-block .line { width: 50px; height: 1px; background: #444; margin: 10px 0; }
+.name-block .title { font-size: 10px; letter-spacing: 4px; color: #888; }
+.name-block .contact { font-size: 10px; color: #555; margin-top: 10px; line-height: 1.8; }
+.content { padding: 28px 44px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+h2 { font-family: 'Tenor Sans', serif; font-size: 13px; color: #111; margin-bottom: 12px; padding-bottom: 6px; position: relative; }
+h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: #111; }
+.entry { margin-bottom: 14px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #111; letter-spacing: 0.5px; }
+.entry .meta { font-size: 9px; color: #999; letter-spacing: 2px; margin: 2px 0 4px; }
+.entry p { font-size: 10px; color: #777; line-height: 1.7; }
+.mono-skill { display: flex; align-items: center; margin-bottom: 8px; }
+.mono-skill .label { font-size: 10px; color: #333; width: 100px; }
+.mono-skill .blocks { display: flex; gap: 3px; }
+.mono-skill .blocks span { width: 14px; height: 5px; background: #ddd; }
+.mono-skill .blocks span.on { background: #111; }
+.bottom-line { height: 6px; background: #111; position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="top-band">
+    <div class="name-block">
+      <div class="pre">Curriculum Vitae</div>
+      <h1>{{NAME}}</h1>
+      <div class="line"></div>
+      <div class="title">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}} • {{PHONE}} • {{LOCATION}}</div>
+    </div>
+  </div>
+  <div class="content">
+    <p style="font-size:11px;color:#777;line-height:1.7;margin-bottom:18px">{{SUMMARY}}</p>
+    <div class="grid-3">
+      <div>
+        <h2>Career</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <div class="mono-skill">
+          <span class="label">{{SKILL_NAME}}</span>
+          <div class="blocks"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+        </div>
+        <!-- SKILLS_END -->
+        <h2 style="margin-top:16px">Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+          <div class="meta">{{EDU_YEAR}}</div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <div class="entry"><p>{{EMAIL}}<br>{{PHONE}}<br>{{LOCATION}}<br>{{LINKEDIN}}</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-line"></div>
+</div>
+</body>
+</html>

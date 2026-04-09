@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonlit Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Raleway', sans-serif; background: #0e1124; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: linear-gradient(160deg, #141830, #0e1124); overflow: hidden; color: #c8d4e8; }
+.header { padding: 28px 36px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #e8d4b0; font-weight: 400; letter-spacing: 2px; }
+.header .role { font-size: 11px; color: rgba(200,210,232,0.5); letter-spacing: 4px; text-transform: uppercase; margin-top: 5px; }
+.header .contact { display: flex; gap: 16px; margin-top: 10px; font-size: 10px; color: rgba(200,210,232,0.35); flex-wrap: wrap; }
+.moon-glow { height: 1px; background: linear-gradient(90deg, transparent, rgba(232,212,176,0.3), transparent); }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 200px; gap: 24px; }
+h2 { font-family: 'Playfair Display', serif; font-size: 14px; color: #e8d4b0; margin-bottom: 12px; font-weight: 400; letter-spacing: 2px; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; color: #c8d4e8; font-weight: 600; }
+.entry .meta { font-size: 9px; color: rgba(232,212,176,0.5); margin: 2px 0; letter-spacing: 2px; }
+.entry p { font-size: 10px; color: rgba(200,210,232,0.5); line-height: 1.7; }
+.moon-skill { font-size: 10px; color: rgba(200,210,232,0.6); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.summary { font-size: 11px; color: rgba(200,210,232,0.5); line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="moon-glow"></div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="moon-skill">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

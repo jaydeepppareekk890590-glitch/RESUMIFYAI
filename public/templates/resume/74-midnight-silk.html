@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midnight Silk Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Raleway', sans-serif; background: #0a0814; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: linear-gradient(160deg, #0d0a1c, #0a0814); overflow: hidden; color: #c8c0e0; }
+.silk-stripe { height: 4px; background: linear-gradient(90deg, #4a2880, #a066cc, #4a2880); }
+.header { padding: 26px 36px; text-align: center; border-bottom: 1px solid rgba(160,102,204,0.15); }
+.header h1 { font-family: 'Italiana', serif; font-size: 36px; color: #d4c0f0; letter-spacing: 4px; }
+.header .role { font-size: 10px; color: rgba(160,102,204,0.5); letter-spacing: 5px; text-transform: uppercase; margin-top: 5px; }
+.header .contact { display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 10px; color: rgba(200,192,224,0.3); flex-wrap: wrap; }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 190px; gap: 24px; }
+h2 { font-family: 'Italiana', serif; font-size: 16px; color: #a066cc; margin-bottom: 12px; font-weight: 400; letter-spacing: 2px; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; color: #d4c0f0; font-weight: 500; }
+.entry .meta { font-size: 9px; color: rgba(160,102,204,0.4); margin: 2px 0; letter-spacing: 2px; }
+.entry p { font-size: 10px; color: rgba(200,192,224,0.4); line-height: 1.7; }
+.silk-skill { display: block; font-size: 10px; color: rgba(160,102,204,0.6); padding: 4px 0; border-bottom: 1px solid rgba(160,102,204,0.07); }
+.summary { font-size: 11px; color: rgba(200,192,224,0.4); line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="silk-stripe"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>·</span><span>{{PHONE}}</span><span>·</span><span>{{LOCATION}}</span><span>·</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="silk-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="silk-stripe" style="position:absolute;bottom:0;left:0;right:0"></div>
+</div>
+</body>
+</html>

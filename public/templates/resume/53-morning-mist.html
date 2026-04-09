@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Mist Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Source Sans 3', sans-serif; background: #f0f4f8; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.header { background: linear-gradient(135deg, #e8f4fd, #d4eaf7, #c5e3f5); padding: 28px 36px; }
+.header h1 { font-family: 'Lora', serif; font-size: 30px; color: #2c5f8a; font-weight: 500; }
+.header .role { font-size: 12px; color: #6a9ec0; letter-spacing: 2px; margin-top: 4px; }
+.header .contact { display: flex; gap: 16px; margin-top: 10px; font-size: 10px; color: #6a9ec0; flex-wrap: wrap; }
+.mist-line { height: 2px; background: linear-gradient(90deg, #c5e3f5, transparent); }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 240px; gap: 24px; }
+h2 { font-family: 'Lora', serif; font-size: 14px; color: #2c5f8a; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #d4eaf7; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #2c5f8a; }
+.entry .meta { font-size: 10px; color: #6a9ec0; margin: 2px 0; }
+.entry p { font-size: 10px; color: #666; line-height: 1.7; }
+.mist-skill { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 10px; color: #444; }
+.mist-skill .dot { width: 6px; height: 6px; border-radius: 50%; background: #c5e3f5; border: 1px solid #6a9ec0; flex-shrink: 0; }
+.summary { font-size: 11px; color: #666; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="mist-line"></div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="mist-skill"><div class="dot"></div>{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

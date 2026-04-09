@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sage Garden Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Mulish', sans-serif; background: #f0f5ee; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; display: grid; grid-template-columns: 190px 1fr; overflow: hidden; }
+.sidebar { background: #4a6741; padding: 28px 18px; color: #e8f0e5; }
+.sidebar h1 { font-family: 'Gilda Display', serif; font-size: 22px; color: #d8eed4; line-height: 1.2; margin-bottom: 6px; }
+.sidebar .role { font-size: 9px; color: rgba(232,240,229,0.6); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.sidebar h2 { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: #a8c9a0; margin-bottom: 8px; margin-top: 16px; }
+.sidebar .contact-item { font-size: 10px; color: rgba(232,240,229,0.7); margin-bottom: 5px; line-height: 1.6; word-break: break-all; }
+.skill-item { font-size: 10px; color: rgba(232,240,229,0.7); padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.main { padding: 28px 24px; overflow: hidden; }
+.section { margin-bottom: 20px; }
+.section h2 { font-family: 'Gilda Display', serif; font-size: 15px; color: #4a6741; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #d4e8d0; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #2c4a28; }
+.entry .meta { font-size: 10px; color: #7a9a76; margin: 2px 0; }
+.entry p { font-size: 10px; color: #555; line-height: 1.7; }
+.summary { font-size: 11px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <h2>Contact</h2>
+    <div class="contact-item">{{EMAIL}}</div>
+    <div class="contact-item">{{PHONE}}</div>
+    <div class="contact-item">{{LOCATION}}</div>
+    <div class="contact-item">{{LINKEDIN}}</div>
+    <h2>Skills</h2>
+    <!-- SKILLS_START -->
+    <div class="skill-item">{{SKILL_NAME}}</div>
+    <!-- SKILLS_END -->
+    <h2>Education</h2>
+    <!-- EDUCATION_START -->
+    <div class="contact-item">{{EDU_DEGREE}}<br>{{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+    <!-- EDUCATION_END -->
+  </div>
+  <div class="main">
+    <div class="summary">{{SUMMARY}}</div>
+    <div class="section">
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

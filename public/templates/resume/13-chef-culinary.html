@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chef Culinary Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: Georgia, serif; background: #faf7f2; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fffdf8; border: none; overflow: hidden; }
+.header { text-align: center; padding: 28px 28px 20px; border-bottom: 2px solid #d4c5a9; }
+.header .stars { color: #c4956a; font-size: 16px; letter-spacing: 8px; margin-bottom: 6px; }
+.header h1 { font-size: 28px; font-weight: 400; color: #2c1810; letter-spacing: 4px; }
+.header .role { font-style: italic; color: #8b7355; font-size: 13px; margin-top: 5px; }
+.header .contact { font-size: 11px; color: #a09080; margin-top: 8px; letter-spacing: 1px; }
+.body { padding: 20px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #c4956a; border-bottom: 1px solid #e8dcc8; padding-bottom: 5px; margin-bottom: 10px; font-weight: 400; }
+.exp { margin-bottom: 14px; }
+.exp .title { font-weight: 700; color: #2c1810; font-size: 12px; }
+.exp .meta { font-style: italic; color: #a09080; font-size: 10px; margin: 2px 0; }
+.exp .desc { color: #5a4a3a; font-size: 11px; line-height: 1.7; }
+.cuisine-tag { display: inline-block; padding: 3px 12px; border: 1px solid #d4c5a9; border-radius: 20px; font-size: 10px; color: #8b7355; margin: 3px; }
+.summary-box { font-size: 11px; color: #5a4a3a; line-height: 1.7; font-style: italic; background: #fdf9f3; padding: 10px; border-left: 3px solid #c4956a; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="stars">★ ★ ★</div>
+    <h1>{{NAME}}</h1>
+    <p class="role">{{ROLE}}</p>
+    <p class="contact">{{EMAIL}} &nbsp;•&nbsp; {{PHONE}} &nbsp;•&nbsp; {{LOCATION}} &nbsp;•&nbsp; {{LINKEDIN}}</p>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary-box">{{SUMMARY}}</div>
+      <h2>Culinary Journey</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="meta">{{EXP_DATE}}</p>
+        <p class="desc">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <p style="font-size:11px;color:#5a4a3a;margin-bottom:5px">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Cuisine Expertise</h2>
+      <div>
+        <!-- SKILLS_START -->
+        <span class="cuisine-tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

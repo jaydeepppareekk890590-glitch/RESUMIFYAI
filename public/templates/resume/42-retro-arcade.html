@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Arcade Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Inter', sans-serif; background: #0a0a2e; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #111145; border: 3px solid #00ff88; overflow: hidden; }
+.header { padding: 24px 28px; text-align: center; border-bottom: 2px dashed #00ff88; }
+.header h1 { font-family: 'Press Start 2P', monospace; font-size: 18px; color: #00ff88; margin-bottom: 6px; text-shadow: 0 0 10px #00ff88; }
+.header p { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #ff6b9d; text-shadow: 0 0 10px #ff6b9d; }
+.header .id { font-family: 'Press Start 2P', monospace; font-size: 7px; color: #ffd166; margin-top: 6px; }
+.stats-bar { display: flex; justify-content: center; gap: 24px; padding: 10px; background: #0a0a2e; border-bottom: 2px dashed #00ff88; }
+.stat .label { font-family: 'Press Start 2P', monospace; font-size: 7px; color: #6ec6ff; display: block; margin-bottom: 3px; }
+.stat .value { font-family: 'Press Start 2P', monospace; font-size: 12px; color: #ffd166; }
+.body { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.section h2 { font-family: 'Press Start 2P', monospace; font-size: 9px; color: #ff6b9d; margin-bottom: 12px; text-shadow: 0 0 8px #ff6b9d; }
+.section h2::before { content: '> '; color: #00ff88; }
+.item { margin-bottom: 10px; padding: 8px; background: #1a1a5e; border-left: 3px solid #00ff88; font-size: 11px; }
+.item h3 { color: #00ff88; font-weight: 700; font-size: 11px; }
+.item p { color: #8888cc; font-size: 10px; margin-top: 2px; }
+.skill-bar { margin-bottom: 7px; }
+.skill-bar .name { font-family: 'Press Start 2P', monospace; font-size: 6px; color: #6ec6ff; margin-bottom: 3px; }
+.skill-bar .bar { height: 10px; background: #0a0a2e; border: 1px solid #00ff88; }
+.skill-bar .bar .fill { height: 100%; background: #00ff88; box-shadow: 0 0 6px #00ff88; width: 85%; }
+.full-width { grid-column: 1 / -1; }
+.contact-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.contact-item { font-family: 'Press Start 2P', monospace; font-size: 7px; color: #ffd166; padding: 6px 10px; background: #0a0a2e; border: 1px solid #ffd166; }
+.footer { text-align: center; padding: 10px; border-top: 2px dashed #00ff88; font-family: 'Press Start 2P', monospace; font-size: 7px; color: #444488; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <p>{{ROLE}} // LEVEL 99</p>
+    <div class="id">{{EMAIL}} // {{PHONE}} // {{LOCATION}}</div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><span class="label">STATUS</span><span class="value">ACTIVE</span></div>
+    <div class="stat"><span class="label">ROLE</span><span class="value">PRO</span></div>
+    <div class="stat"><span class="label">RANK</span><span class="value">S+</span></div>
+  </div>
+  <div class="body">
+    <div class="section">
+      <h2>QUEST LOG</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="item">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <p>{{EXP_DATE}}</p>
+        <p style="margin-top:3px;font-size:10px;color:#aaa">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="section">
+      <h2>SKILL TREE</h2>
+      <!-- SKILLS_START -->
+      <div class="skill-bar">
+        <div class="name">{{SKILL_NAME}}</div>
+        <div class="bar"><div class="fill"></div></div>
+      </div>
+      <!-- SKILLS_END -->
+    </div>
+    <div class="section">
+      <h2>TRAINING</h2>
+      <!-- EDUCATION_START -->
+      <div class="item">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <p>{{EDU_YEAR}}</p>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div class="section">
+      <h2>CONTACT</h2>
+      <div class="contact-grid">
+        <div class="contact-item">EMAIL: {{EMAIL}}</div>
+        <div class="contact-item">TEL: {{PHONE}}</div>
+        <div class="contact-item">WEB: {{LINKEDIN}}</div>
+        <div class="contact-item">LOC: {{LOCATION}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">{{SUMMARY}}</div>
+</div>
+</body>
+</html>

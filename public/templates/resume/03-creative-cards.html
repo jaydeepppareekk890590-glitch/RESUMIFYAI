@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Cards Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #f5f5fa, #ede9fe); margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; padding: 14mm; overflow: hidden; }
+.header { text-align: center; margin-bottom: 28px; }
+.header h1 { font-size: 28px; font-weight: 900; color: #1a1a1a; }
+.header .role { font-size: 13px; font-weight: 500; color: #7c3aed; margin-top: 4px; }
+.header .contact { font-size: 11px; color: #6b7280; margin-top: 6px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.card h4 { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+.card p, .card span { font-size: 12px; color: #6b7280; line-height: 1.6; }
+.card .title { font-weight: 600; color: #1a1a1a; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; background: rgba(124,58,237,0.1); color: #7c3aed; }
+.award { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">{{EMAIL}} • {{LINKEDIN}} • {{LOCATION}}</div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h4>✦ Experience</h4>
+      <!-- EXPERIENCE_START -->
+      <p><span class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</span><br>{{EXP_DATE}} · {{EXP_DESC}}</p>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="card">
+      <h4>✦ Awards</h4>
+      <p class="award">🏆 Cannes Lions Gold — 2023</p>
+      <p class="award">🏆 D&AD Yellow Pencil — 2022</p>
+      <p class="award">🏆 ADC Annual Awards — 2021</p>
+      <p class="award">🏆 Forbes 30 Under 30 — 2020</p>
+      <p style="margin-top:10px">{{SUMMARY}}</p>
+    </div>
+    <div class="card">
+      <h4>✦ Expertise</h4>
+      <div class="tags">
+        <!-- SKILLS_START -->
+        <span class="tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+    <div class="card">
+      <h4>✦ Education</h4>
+      <!-- EDUCATION_START -->
+      <p>{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+      <h4 style="margin-top:12px">✦ Speaking</h4>
+      <p>AIGA National, SXSW, Awwwards Conf</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

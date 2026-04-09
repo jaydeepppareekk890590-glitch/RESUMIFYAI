@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architect Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Helvetica Neue', sans-serif; background: #e8e4df; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; display: grid; grid-template-columns: 200px 1fr; overflow: hidden; }
+.sidebar { background: #1a1a1a; color: white; padding: 28px 20px; overflow: hidden; }
+.main { background: #fafaf7; padding: 24px; overflow: hidden; }
+.initials { width: 60px; height: 60px; border: 2px solid #e8c547; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 100; letter-spacing: 4px; color: #e8c547; margin-bottom: 14px; }
+.sidebar h1 { font-size: 16px; font-weight: 300; letter-spacing: 2px; margin-bottom: 3px; }
+.sidebar .role { font-size: 10px; color: #888; letter-spacing: 1px; margin-bottom: 18px; }
+.sidebar h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 2px; color: #e8c547; margin-bottom: 8px; margin-top: 16px; }
+.sidebar p, .sidebar li { font-size: 10px; color: #aaa; line-height: 1.8; }
+.sidebar ul { list-style: none; }
+.sidebar li::before { content: '—'; margin-right: 6px; color: #e8c547; }
+.main h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #ddd; }
+.project { margin-bottom: 14px; display: grid; grid-template-columns: 60px 1fr; gap: 10px; }
+.project .year { font-size: 10px; color: #999; padding-top: 2px; }
+.project .title { font-weight: 600; color: #1a1a1a; font-size: 12px; }
+.project .meta { font-size: 10px; color: #999; margin: 2px 0; }
+.project .desc { font-size: 11px; color: #666; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div class="initials">{{NAME}}</div>
+    <h1>{{NAME}}</h1>
+    <p class="role">{{ROLE}}</p>
+    <h3>Contact</h3>
+    <p>{{EMAIL}}<br>{{PHONE}}<br>{{LOCATION}}</p>
+    <h3>Skills</h3>
+    <ul>
+      <!-- SKILLS_START -->
+      <li>{{SKILL_NAME}}</li>
+      <!-- SKILLS_END -->
+    </ul>
+    <h3>Education</h3>
+    <!-- EDUCATION_START -->
+    <p>{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+    <!-- EDUCATION_END -->
+  </div>
+  <div class="main">
+    <p style="font-size:11px;color:#666;margin-bottom:14px;line-height:1.7">{{SUMMARY}}</p>
+    <h2>Experience</h2>
+    <!-- EXPERIENCE_START -->
+    <div class="project">
+      <div class="year">{{EXP_DATE}}</div>
+      <div>
+        <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="desc">{{EXP_DESC}}</p>
+      </div>
+    </div>
+    <!-- EXPERIENCE_END -->
+  </div>
+</div>
+</body>
+</html>

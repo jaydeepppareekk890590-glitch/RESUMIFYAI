@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagonal Split Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Sora', sans-serif; background: #0f0f0f; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; position: relative; overflow: hidden; display: grid; grid-template-columns: 260px 1fr; }
+.left { background: #7c3aed; padding: 32px 28px; clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); color: #fff; position: relative; z-index: 2; overflow: hidden; }
+.right { background: #fafafa; padding: 28px 24px 28px 52px; position: relative; overflow: hidden; }
+.left h1 { font-size: 26px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 6px; }
+.left .role { font-size: 10px; font-weight: 300; margin-top: 6px; opacity: 0.7; letter-spacing: 2px; }
+.left-section { margin-top: 22px; }
+.left-section h2 { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; opacity: 0.5; margin-bottom: 10px; }
+.left-section p { font-size: 10px; line-height: 1.8; opacity: 0.8; }
+.left-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.left-tags span { padding: 4px 10px; border-radius: 5px; font-size: 9px; background: rgba(255,255,255,0.15); font-weight: 500; }
+.right h2 { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #7c3aed; margin-bottom: 12px; font-weight: 700; }
+.right-section { margin-bottom: 22px; }
+.entry { margin-bottom: 14px; padding-left: 14px; border-left: 3px solid #7c3aed; }
+.entry h3 { font-size: 12px; font-weight: 600; color: #1a1a1a; }
+.entry .meta { font-size: 10px; color: #7c3aed; margin: 2px 0 4px; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #888; line-height: 1.7; }
+.summary { font-size: 10px; color: #666; line-height: 1.7; margin-bottom: 14px; padding: 10px; background: #f5f0ff; border-radius: 8px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="left">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="left-section">
+      <h2>Contact</h2>
+      <p>{{EMAIL}}<br>{{PHONE}}<br>{{LOCATION}}<br>{{LINKEDIN}}</p>
+    </div>
+    <div class="left-section">
+      <h2>Skills</h2>
+      <div class="left-tags">
+        <!-- SKILLS_START -->
+        <span>{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+    <div class="left-section">
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <p style="font-size:10px;opacity:0.8;margin-bottom:5px">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+  <div class="right">
+    <div class="summary">{{SUMMARY}}</div>
+    <div class="right-section">
+      <h2>Career</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corrupted File Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Share Tech Mono', monospace; background: #020610; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #020610; overflow: hidden; color: #0f6; padding: 20px 28px; }
+.err-bar { background: #0a0; color: #fff; font-family: 'VT323', monospace; font-size: 16px; padding: 6px 12px; margin-bottom: 14px; letter-spacing: 2px; }
+.header { margin-bottom: 16px; border-bottom: 1px dashed rgba(0,255,80,0.15); padding-bottom: 14px; }
+.header h1 { font-family: 'VT323', monospace; font-size: 36px; color: #0f6; text-shadow: 2px 0 #f0f, -2px 0 #0ff; letter-spacing: 3px; }
+.header .role { font-size: 12px; color: rgba(0,255,80,0.4); letter-spacing: 3px; margin-top: 3px; }
+.header .contact { display: flex; gap: 10px; margin-top: 8px; font-size: 10px; color: rgba(0,255,80,0.25); flex-wrap: wrap; }
+.body { display: grid; grid-template-columns: 1fr 190px; gap: 20px; }
+h2 { font-family: 'VT323', monospace; font-size: 18px; color: #0f6; letter-spacing: 2px; margin-bottom: 10px; }
+h2::before { content: '>_ '; }
+.entry { margin-bottom: 12px; padding-left: 10px; border-left: 1px solid rgba(0,255,80,0.1); }
+.entry h3 { font-size: 11px; color: rgba(0,255,80,0.8); font-weight: 700; }
+.entry .meta { font-size: 10px; color: rgba(0,255,80,0.3); margin: 2px 0; }
+.entry p { font-size: 10px; color: rgba(0,255,80,0.3); line-height: 1.6; }
+.corrupt-skill { display: block; font-size: 10px; color: rgba(0,255,80,0.5); padding: 4px 0; border-bottom: 1px solid rgba(0,255,80,0.05); }
+.corrupt-skill::before { content: '$ '; color: #0f0; }
+.summary { font-size: 10px; color: rgba(0,255,80,0.35); line-height: 1.6; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="err-bar">⚠ FILE LOADED — STATUS: ACTIVE — CV v2.0 [{{NAME}}]</div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>|</span><span>{{PHONE}}</span><span>|</span><span>{{LOCATION}}</span><span>|</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="summary">// {{SUMMARY}}</div>
+  <div class="body">
+    <div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="corrupt-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

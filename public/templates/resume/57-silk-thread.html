@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silk Thread Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Karla', sans-serif; background: #f8f5f2; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fdfaf7; overflow: hidden; }
+.silk-top { height: 6px; background: linear-gradient(90deg, #c5a882, #e8d5bc, #c5a882); }
+.header { padding: 28px 40px 20px; text-align: center; }
+.header h1 { font-family: 'Bodoni Moda', serif; font-size: 34px; color: #3d2b1a; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; }
+.header .role { font-size: 10px; color: #c5a882; letter-spacing: 5px; text-transform: uppercase; margin-top: 6px; }
+.header .contact { display: flex; justify-content: center; gap: 16px; margin-top: 12px; font-size: 10px; color: #8a7060; }
+.silk-divider { height: 1px; background: linear-gradient(90deg, transparent, #c5a882, transparent); margin: 0 40px; }
+.body { padding: 22px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+h2 { font-family: 'Bodoni Moda', serif; font-size: 14px; color: #3d2b1a; margin-bottom: 12px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; color: #3d2b1a; font-weight: 600; }
+.entry .meta { font-size: 10px; color: #c5a882; margin: 2px 0; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #6b5a48; line-height: 1.7; }
+.silk-skill { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 10px; color: #6b5a48; }
+.silk-skill::before { content: '—'; color: #c5a882; }
+.summary { font-size: 11px; color: #6b5a48; line-height: 1.8; margin-bottom: 18px; text-align: center; font-style: italic; grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="silk-top"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>·</span><span>{{PHONE}}</span><span>·</span><span>{{LOCATION}}</span><span>·</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="silk-divider"></div>
+  <div class="body">
+    <p class="summary">{{SUMMARY}}</p>
+    <div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="silk-skill">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+  <div class="silk-top"></div>
+</div>
+</body>
+</html>

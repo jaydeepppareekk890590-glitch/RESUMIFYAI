@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Blocks Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Rubik', sans-serif; background: #f0f0f0; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; display: flex; flex-direction: column; gap: 3px; padding: 10px; overflow: hidden; }
+.block { border-radius: 10px; padding: 16px; position: relative; overflow: hidden; }
+.block::before { content: ''; position: absolute; top: 6px; left: 12px; width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.block::after { content: ''; position: absolute; top: 6px; left: 32px; width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.red { background: #e53935; color: #fff; }
+.blue { background: #1e88e5; color: #fff; }
+.yellow { background: #fdd835; color: #222; }
+.green { background: #43a047; color: #fff; }
+.orange { background: #fb8c00; color: #fff; }
+.purple { background: #8e24aa; color: #fff; }
+.header { display: flex; align-items: center; gap: 18px; }
+h1 { font-size: 28px; font-weight: 900; }
+.subtitle { font-size: 11px; opacity: 0.9; margin-top: 2px; }
+.contact { display: flex; gap: 12px; margin-top: 6px; font-size: 11px; opacity: 0.85; flex-wrap: wrap; }
+.block h2 { font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.entry { margin-bottom: 8px; padding: 8px; background: rgba(255,255,255,0.15); border-radius: 7px; }
+.entry h3 { font-size: 11px; font-weight: 800; }
+.entry .meta { font-size: 10px; opacity: 0.7; margin: 1px 0; }
+.entry p { font-size: 10px; opacity: 0.85; line-height: 1.5; }
+.skills-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-block { padding: 5px 12px; background: rgba(255,255,255,0.2); border-radius: 7px; font-size: 11px; font-weight: 800; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="block red header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="subtitle">{{ROLE}}</div>
+      <div class="contact">
+        <span>📧 {{EMAIL}}</span><span>📱 {{PHONE}}</span><span>📍 {{LOCATION}}</span><span>🌐 {{LINKEDIN}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="block blue">
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}}</h3>
+        <div class="meta">{{EXP_COMPANY}} · {{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="block green">
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}}</h3>
+        <div class="meta">{{EDU_SCHOOL}} · {{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+  <div class="block yellow">
+    <h2>Skills Stack</h2>
+    <div class="skills-row">
+      <!-- SKILLS_START -->
+      <span class="skill-block">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="block orange">
+    <h2>About</h2>
+    <p style="font-size:11px;opacity:0.85;line-height:1.7">{{SUMMARY}}</p>
+  </div>
+</div>
+</body>
+</html>

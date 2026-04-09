@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaroid Collage Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Poppins', sans-serif; background: #fef9f0; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; padding: 30px 32px; position: relative; overflow: hidden; }
+.tape { position: absolute; width: 60px; height: 18px; background: rgba(255,220,150,0.6); }
+.tape-1 { top: 10px; left: 28px; transform: rotate(-5deg); }
+.tape-2 { top: 10px; right: 28px; transform: rotate(3deg); }
+.header { display: flex; align-items: flex-start; gap: 22px; margin-bottom: 24px; }
+.polaroid { background: #fff; padding: 8px 8px 22px; box-shadow: 2px 3px 10px rgba(0,0,0,0.1); transform: rotate(-3deg); flex-shrink: 0; }
+.polaroid .photo-inner { width: 110px; height: 130px; background: #f0ebe0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #ccc; letter-spacing: 2px; }
+.polaroid .caption { font-family: 'Caveat', cursive; font-size: 12px; text-align: center; color: #666; margin-top: 6px; }
+.header-right h1 { font-size: 34px; font-weight: 700; color: #2d2d2d; line-height: 1.1; }
+.header-right h1 span { font-family: 'Caveat', cursive; color: #e8734a; font-weight: 400; font-size: 38px; }
+.header-right .tagline { font-size: 10px; color: #999; margin-top: 6px; letter-spacing: 1px; }
+.header-right .contact-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.header-right .contact-pills span { padding: 4px 12px; background: #fef4eb; border-radius: 20px; font-size: 10px; color: #e8734a; font-weight: 500; }
+.sections { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+h2 { font-family: 'Caveat', cursive; font-size: 20px; color: #e8734a; margin-bottom: 8px; }
+.card { background: #fef9f0; border-radius: 10px; padding: 12px; margin-bottom: 10px; border: 1px dashed #e8d5c4; }
+.card h3 { font-size: 11px; font-weight: 600; color: #2d2d2d; }
+.card .meta { font-size: 10px; color: #e8734a; margin: 2px 0 4px; }
+.card p { font-size: 10px; color: #888; line-height: 1.6; }
+.fun-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.fun-skills span { padding: 6px 12px; border-radius: 20px; font-size: 10px; font-weight: 500; background: #fff; border: 2px solid #fde2d2; color: #e8734a; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="tape tape-1"></div>
+  <div class="tape tape-2"></div>
+  <div class="header">
+    <div class="polaroid">
+      <div class="photo-inner">PHOTO</div>
+      <div class="caption">That's me! 👋</div>
+    </div>
+    <div class="header-right">
+      <h1>{{NAME}}</h1>
+      <div class="tagline">{{ROLE}}</div>
+      <div class="contact-pills">
+        <span>{{EMAIL}}</span>
+        <span>{{LINKEDIN}}</span>
+        <span>{{LOCATION}}</span>
+        <span>{{PHONE}}</span>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:#888;line-height:1.7;margin-bottom:14px">{{SUMMARY}}</p>
+  <div class="sections">
+    <div>
+      <h2>Where I've Been ✦</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="card">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>School Days 📚</h2>
+      <!-- EDUCATION_START -->
+      <div class="card">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>My Superpowers 💪</h2>
+      <div class="fun-skills">
+        <!-- SKILLS_START -->
+        <span>{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

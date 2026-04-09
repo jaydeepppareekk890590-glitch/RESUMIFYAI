@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Analyst Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f5; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: white; overflow: hidden; }
+.header { background: #0c2340; padding: 26px 28px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; }
+.header h1 { font-size: 22px; color: white; font-weight: 700; letter-spacing: 1px; }
+.header .role { color: #4a9eff; font-size: 12px; margin-top: 3px; font-weight: 500; }
+.header .contact { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 6px; line-height: 1.8; }
+.chart-bar { height: 4px; background: linear-gradient(90deg, #0c2340 0%, #4a9eff 50%, #22c55e 100%); }
+.body { padding: 20px 28px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; }
+h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #0c2340; font-weight: 700; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 2px solid #4a9eff; }
+.exp { margin-bottom: 13px; }
+.exp .title { font-weight: 600; color: #0c2340; font-size: 12px; }
+.exp .meta { font-size: 10px; color: #94a3b8; margin: 2px 0; }
+.exp .desc { font-size: 11px; color: #64748b; line-height: 1.6; }
+.skill-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f8fafc; }
+.skill-row .name { font-size: 11px; color: #334155; }
+.skill-row .level { display: flex; gap: 2px; }
+.skill-row .block { width: 10px; height: 5px; background: #e2e8f0; border-radius: 1px; }
+.skill-row .block.active { background: #4a9eff; }
+.edu-info { font-size: 11px; color: #64748b; line-height: 1.8; }
+.summary { font-size: 11px; color: #64748b; line-height: 1.7; margin-bottom: 14px; padding: 10px; background: #f8faff; border-left: 3px solid #4a9eff; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <p class="role">{{ROLE}}</p>
+      <div class="contact">{{EMAIL}} • {{PHONE}} • {{LOCATION}} • {{LINKEDIN}}</div>
+    </div>
+  </div>
+  <div class="chart-bar"></div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="meta">{{EXP_DATE}}</p>
+        <p class="desc">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Technical Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="skill-row">
+        <span class="name">{{SKILL_NAME}}</span>
+        <div class="level"><div class="block active"></div><div class="block active"></div><div class="block active"></div><div class="block active"></div><div class="block"></div></div>
+      </div>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:18px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

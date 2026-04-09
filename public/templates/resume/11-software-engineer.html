@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Engineer Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #e0e0e0; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #111; overflow: hidden; }
+.terminal-bar { background: #1a1a1a; padding: 8px 16px; display: flex; gap: 6px; align-items: center; }
+.dot { width: 10px; height: 10px; border-radius: 50%; } .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
+.terminal-bar span { margin-left: auto; font-size: 11px; color: #666; }
+.content { padding: 22px 28px; }
+h1 { font-size: 26px; color: #00ff88; margin-bottom: 4px; }
+.subtitle { color: #888; font-size: 12px; margin-bottom: 8px; }
+.prompt { color: #00ff88; margin-right: 8px; }
+.section { margin-bottom: 18px; }
+.section h2 { font-size: 12px; color: #ff6b6b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px dashed #333; }
+.job { margin-bottom: 12px; }
+.job .title { color: #61dafb; font-size: 12px; font-weight: bold; }
+.job .meta { color: #666; font-size: 10px; margin: 2px 0; }
+.job .desc { color: #aaa; font-size: 11px; line-height: 1.6; }
+.skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill { background: #1a2a1a; border: 1px solid #00ff8844; color: #00ff88; padding: 3px 10px; border-radius: 4px; font-size: 10px; }
+.contact { display: flex; gap: 16px; font-size: 10px; color: #888; flex-wrap: wrap; margin-bottom: 16px; }
+.edu-info { color: #aaa; font-size: 11px; }
+.two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="terminal-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>resume.exe — bash</span></div>
+  <div class="content">
+    <p style="color:#666;font-size:10px;margin-bottom:4px"><span class="prompt">$</span> cat ~/resume.md</p>
+    <h1>{{NAME}}</h1>
+    <p class="subtitle">{{ROLE}}</p>
+    <div class="contact"><span>📧 {{EMAIL}}</span><span>🔗 {{LINKEDIN}}</span><span>📍 {{LOCATION}}</span><span>📞 {{PHONE}}</span></div>
+    <p style="color:#aaa;font-size:11px;margin-bottom:14px">{{SUMMARY}}</p>
+    <div class="two-col">
+      <div>
+        <div class="section">
+          <h2><span class="prompt">#</span> Experience</h2>
+          <!-- EXPERIENCE_START -->
+          <div class="job">
+            <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+            <p class="meta">{{EXP_DATE}}</p>
+            <p class="desc">{{EXP_DESC}}</p>
+          </div>
+          <!-- EXPERIENCE_END -->
+        </div>
+      </div>
+      <div>
+        <div class="section">
+          <h2><span class="prompt">#</span> Tech Stack</h2>
+          <div class="skills">
+            <!-- SKILLS_START -->
+            <span class="skill">{{SKILL_NAME}}</span>
+            <!-- SKILLS_END -->
+          </div>
+        </div>
+        <div class="section" style="margin-top:16px">
+          <h2><span class="prompt">#</span> Education</h2>
+          <!-- EDUCATION_START -->
+          <p class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+          <!-- EDUCATION_END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

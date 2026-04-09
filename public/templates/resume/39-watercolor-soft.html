@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watercolor Soft Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #f8f0f7, #f0f4f8); margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; position: relative; overflow: hidden; }
+.watercolor-bg { position: absolute; top: -40px; right: -40px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(180,130,200,0.1), rgba(130,170,220,0.08), transparent); z-index: 0; }
+.watercolor-bg2 { position: absolute; bottom: -60px; left: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(220,170,180,0.1), rgba(180,200,160,0.06), transparent); z-index: 0; }
+.header { position: relative; z-index: 1; display: flex; align-items: center; gap: 24px; padding: 28px 36px 18px; }
+.header-info h1 { font-family: 'Cormorant Infant', serif; font-size: 36px; color: #3a2d4a; font-weight: 600; line-height: 1.1; }
+.header-info .role { font-size: 11px; color: #b484c8; letter-spacing: 3px; margin-top: 5px; }
+.header-info .bio { font-size: 11px; color: #999; line-height: 1.7; margin-top: 8px; max-width: 380px; }
+.header-info .contact { font-size: 10px; color: #bbb; margin-top: 6px; }
+.content { position: relative; z-index: 1; padding: 14px 36px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+h2 { font-family: 'Cormorant Infant', serif; font-size: 18px; color: #3a2d4a; margin-bottom: 12px; }
+.entry { margin-bottom: 14px; padding-left: 12px; border-left: 3px solid rgba(180,130,200,0.2); }
+.entry h3 { font-size: 11px; font-weight: 600; color: #3a2d4a; }
+.entry .meta { font-size: 10px; color: #b484c8; margin: 2px 0 4px; }
+.entry p { font-size: 10px; color: #999; line-height: 1.7; }
+.soft-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.soft-tags span { padding: 5px 12px; border-radius: 20px; font-size: 10px; background: linear-gradient(135deg, rgba(180,130,200,0.1), rgba(130,170,220,0.1)); color: #7a5a8a; font-weight: 500; border: 1px solid rgba(180,130,200,0.15); }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="watercolor-bg"></div>
+  <div class="watercolor-bg2"></div>
+  <div class="header">
+    <div class="header-info">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="bio">{{SUMMARY}}</div>
+      <div class="contact">{{EMAIL}} · {{PHONE}} · {{LOCATION}} · {{LINKEDIN}}</div>
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <h2>Journey</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <div class="soft-tags">
+        <!-- SKILLS_START -->
+        <span>{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

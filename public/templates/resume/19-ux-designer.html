@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX Designer Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f5f0ff; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: white; overflow: hidden; }
+.header { padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; }
+.header .info h1 { font-size: 26px; font-weight: 800; color: #1e1b4b; }
+.header .info .role { font-size: 12px; color: #6366f1; font-weight: 500; margin-top: 2px; }
+.header .info .contact { font-size: 11px; color: #94a3b8; margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+.header .avatar { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: white; }
+.process { display: flex; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; }
+.process-step { flex: 1; padding: 10px; text-align: center; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; border-right: 1px solid #f1f5f9; }
+.process-step:last-child { border-right: none; }
+.process-step .icon { font-size: 16px; margin-bottom: 3px; display: block; }
+.process-step .label { color: #6366f1; font-weight: 600; }
+.body { padding: 18px 28px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #6366f1; font-weight: 700; margin-bottom: 10px; }
+.case { background: #faf8ff; border-radius: 12px; padding: 12px; margin-bottom: 10px; border: 1px solid #f0ecff; }
+.case .title { font-weight: 700; color: #1e1b4b; font-size: 12px; }
+.case .meta { font-size: 10px; color: #94a3b8; margin: 3px 0; }
+.case .desc { font-size: 11px; color: #64748b; line-height: 1.6; }
+.tool { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: #faf8ff; border-radius: 8px; font-size: 10px; color: #475569; margin: 3px; }
+.tool .dot { width: 6px; height: 6px; border-radius: 50%; background: #6366f1; flex-shrink: 0; }
+.edu-info { font-size: 11px; color: #64748b; line-height: 1.8; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="info">
+      <h1>{{NAME}}</h1>
+      <p class="role">{{ROLE}}</p>
+      <div class="contact"><span>{{EMAIL}}</span><span>{{LINKEDIN}}</span><span>{{LOCATION}}</span><span>{{PHONE}}</span></div>
+    </div>
+    <div class="avatar">{{NAME}}</div>
+  </div>
+  <div class="process">
+    <div class="process-step"><span class="icon">🔍</span><span class="label">Research</span></div>
+    <div class="process-step"><span class="icon">💡</span><span class="label">Ideate</span></div>
+    <div class="process-step"><span class="icon">✏️</span><span class="label">Design</span></div>
+    <div class="process-step"><span class="icon">🧪</span><span class="label">Test</span></div>
+    <div class="process-step"><span class="icon">🚀</span><span class="label">Ship</span></div>
+  </div>
+  <div class="body">
+    <div>
+      <p style="font-size:11px;color:#64748b;line-height:1.7;margin-bottom:12px">{{SUMMARY}}</p>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="case">
+        <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="meta">{{EXP_DATE}}</p>
+        <p class="desc">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Design Tools</h2>
+      <!-- SKILLS_START -->
+      <span class="tool"><div class="dot"></div>{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:18px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

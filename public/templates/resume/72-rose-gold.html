@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Gold Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Jost', sans-serif; background: #fdf5f5; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.rose-top { height: 5px; background: linear-gradient(90deg, #c8956c, #f0b8a0, #e8a890, #c8956c); }
+.header { background: linear-gradient(135deg, #f9ede8, #fdf5f5); padding: 26px 36px; text-align: center; border-bottom: 1px solid #f0d4c8; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #7a3e2e; font-weight: 500; letter-spacing: 2px; }
+.header .role { font-size: 11px; color: #c8956c; letter-spacing: 4px; text-transform: uppercase; margin-top: 5px; }
+.header .contact { display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 10px; color: #a08070; flex-wrap: wrap; }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 195px; gap: 24px; }
+h2 { font-family: 'Playfair Display', serif; font-size: 14px; color: #7a3e2e; margin-bottom: 12px; font-weight: 500; padding-bottom: 5px; border-bottom: 1px solid #f0d4c8; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #4a2520; }
+.entry .meta { font-size: 10px; color: #c8956c; margin: 2px 0; }
+.entry p { font-size: 10px; color: #6a5550; line-height: 1.7; }
+.rose-skill { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f9ede8; font-size: 10px; color: #6a5550; }
+.rose-skill::before { content: '◆'; color: #c8956c; font-size: 7px; }
+.summary { font-size: 11px; color: #6a5550; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="rose-top"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>·</span><span>{{PHONE}}</span><span>·</span><span>{{LOCATION}}</span><span>·</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <div class="rose-skill">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="rose-top"></div>
+</div>
+</body>
+</html>

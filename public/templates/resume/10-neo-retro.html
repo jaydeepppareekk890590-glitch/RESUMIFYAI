@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neo Retro Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Courier New', monospace; background: #fffbeb; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fffbeb; padding: 14mm; border: 3px solid #1a1a1a; box-shadow: none; overflow: hidden; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 3px double #1a1a1a; }
+.header h1 { font-size: 26px; font-weight: 900; color: #1a1a1a; text-transform: uppercase; }
+.badge { display: inline-block; padding: 4px 12px; background: #1a1a1a; color: #fbbf24; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 6px; }
+.header .contact { text-align: right; font-size: 11px; color: #57534e; line-height: 1.8; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
+h3 { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 2px solid #1a1a1a; }
+.exp-item { margin-bottom: 12px; padding: 8px; border: 1px solid #d6d3d1; }
+.exp-item .title { font-weight: 700; color: #1a1a1a; font-size: 12px; }
+.exp-item .date { font-size: 10px; color: #78716c; }
+.exp-item .desc { color: #57534e; margin-top: 4px; line-height: 1.5; font-size: 11px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { padding: 3px 8px; border: 1px solid #1a1a1a; font-size: 10px; font-weight: 700; color: #1a1a1a; }
+.edu-item { color: #57534e; margin-bottom: 6px; font-size: 11px; }
+.summary { color: #57534e; line-height: 1.6; font-size: 11px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="badge">{{ROLE}}</div>
+    </div>
+    <div class="contact">{{EMAIL}}<br>{{LOCATION}}<br>{{PHONE}}<br>{{LINKEDIN}}</div>
+  </div>
+  <div class="summary">{{SUMMARY}}</div>
+  <div class="grid">
+    <div>
+      <h3>Quest Log (Experience)</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="exp-item">
+        <div class="title">[QUEST] {{EXP_TITLE}} — {{EXP_COMPANY}}</div>
+        <div class="date">{{EXP_DATE}}</div>
+        <div class="desc">{{EXP_DESC}}</div>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h3>Skill Tree</h3>
+      <div class="tags">
+        <!-- SKILLS_START -->
+        <span class="tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <h3 style="margin-top:18px">Base Stats (Education)</h3>
+      <!-- EDUCATION_START -->
+      <div class="edu-item">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

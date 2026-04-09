@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graffiti Street Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Barlow:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Barlow', sans-serif; background: #1a1a1a; color: #fff; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #1a1a1a; position: relative; overflow: hidden; }
+.spray-bg { position: absolute; width: 300px; height: 300px; border-radius: 50%; filter: blur(60px); opacity: 0.15; }
+.spray-1 { background: #ff4757; top: -80px; left: -80px; }
+.spray-2 { background: #3742fa; bottom: 0; right: -80px; }
+.spray-3 { background: #ffa502; top: 40%; left: 40%; transform: translate(-50%, -50%); }
+.header { display: flex; gap: 18px; align-items: center; padding: 20px 24px; background: linear-gradient(135deg, #ff4757, #ff6348, #ffa502); border-radius: 4px; margin: 14px; position: relative; z-index: 1; transform: rotate(-0.5deg); }
+h1 { font-family: 'Permanent Marker', cursive; font-size: 34px; line-height: 1; text-shadow: 3px 3px 0 rgba(0,0,0,0.3); }
+.tagline { font-size: 11px; opacity: 0.9; margin-top: 3px; font-weight: 600; }
+.contact-strip { display: flex; gap: 12px; margin-top: 8px; font-size: 11px; opacity: 0.85; flex-wrap: wrap; }
+.body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 14px 14px; position: relative; z-index: 1; }
+.block { background: #222; border-radius: 4px; padding: 16px; position: relative; overflow: hidden; }
+.block.wide { grid-column: 1 / -1; }
+.block::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; }
+.block:nth-child(1)::before { background: #ff4757; }
+.block:nth-child(2)::before { background: #ffa502; }
+.block:nth-child(3)::before { background: #3742fa; }
+.block:nth-child(4)::before { background: #2ed573; }
+.block:nth-child(5)::before { background: #ff6348; }
+.block h2 { font-family: 'Permanent Marker', cursive; font-size: 16px; margin-bottom: 10px; color: #ffa502; }
+.entry { margin-bottom: 10px; }
+.entry h3 { font-size: 12px; font-weight: 800; color: #fff; }
+.entry .meta { font-size: 10px; color: #888; margin: 2px 0; }
+.entry p { font-size: 10px; color: #aaa; line-height: 1.5; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { padding: 5px 12px; border: 2px solid; border-radius: 2px; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.tag:nth-child(odd) { border-color: #ff4757; color: #ff4757; }
+.tag:nth-child(even) { border-color: #ffa502; color: #ffa502; }
+.tag:nth-child(3n) { border-color: #3742fa; color: #3742fa; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="spray-bg spray-1"></div>
+  <div class="spray-bg spray-2"></div>
+  <div class="spray-bg spray-3"></div>
+  <div class="header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="tagline">{{ROLE}}</div>
+      <div class="contact-strip">
+        <span>📧 {{EMAIL}}</span>
+        <span>📍 {{LOCATION}}</span>
+        <span>🌐 {{LINKEDIN}}</span>
+        <span>📱 {{PHONE}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="body-grid">
+    <div class="block">
+      <h2>THE GRIND</h2>
+      <p style="font-size:10px;color:#888;margin-bottom:8px">{{SUMMARY}}</p>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}}</h3>
+        <div class="meta">{{EXP_COMPANY}} · {{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="block">
+      <h2>THE ROOTS</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}}</h3>
+        <div class="meta">{{EDU_SCHOOL}} · {{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div class="block wide">
+      <h2>THE ARSENAL</h2>
+      <div class="tag-cloud">
+        <!-- SKILLS_START -->
+        <span class="tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

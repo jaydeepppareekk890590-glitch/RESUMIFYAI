@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split Accent Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fa; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 32px; }
+.header h1 { font-size: 28px; font-weight: 800; color: #1a1a1a; line-height: 1.1; }
+.header .role { font-size: 13px; color: #f97316; margin-top: 4px; }
+.header .contact { text-align: right; font-size: 11px; color: #6b7280; line-height: 1.8; }
+.gradient-bar { height: 5px; background: linear-gradient(90deg, #f97316, #ec4899, #7c3aed); }
+.content { padding: 28px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; font-size: 12px; }
+h3 { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+.exp-item { padding-left: 14px; border-left: 3px solid; margin-bottom: 14px; }
+.exp-item .title { font-weight: 600; color: #1a1a1a; }
+.exp-item .date { font-size: 10px; color: #6b7280; }
+.exp-item .desc { color: #6b7280; margin-top: 4px; line-height: 1.5; }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.tech-grid p { color: #6b7280; }
+.app { color: #6b7280; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div><h1>{{NAME}}</h1><div class="role">{{ROLE}}</div></div>
+    <div class="contact">{{EMAIL}}<br>{{LOCATION}}<br>{{LINKEDIN}}</div>
+  </div>
+  <div class="gradient-bar"></div>
+  <div class="content">
+    <div>
+      <h3>Experience</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="exp-item" style="border-color:#f97316"><div class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</div><div class="date">{{EXP_DATE}}</div><div class="desc">{{EXP_DESC}}</div></div>
+      <!-- EXPERIENCE_END -->
+      <div style="margin-top:10px;color:#6b7280;line-height:1.6">{{SUMMARY}}</div>
+    </div>
+    <div>
+      <h3>Tech Stack</h3>
+      <div class="tech-grid">
+        <!-- SKILLS_START -->
+        <p>▸ {{SKILL_NAME}}</p>
+        <!-- SKILLS_END -->
+      </div>
+      <h3 style="margin-top:20px">Apps Shipped</h3>
+      <p class="app">📱 Tesla Mobile — 10M+ downloads</p>
+      <p class="app">📱 FitTrack Pro — 2M+ downloads</p>
+      <p class="app">📱 CookBook AI — Apple Editor's Choice</p>
+      <h3 style="margin-top:20px">Education</h3>
+      <!-- EDUCATION_START -->
+      <p style="color:#6b7280">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

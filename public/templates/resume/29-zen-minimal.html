@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zen Minimal Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans:wght@300;400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Noto Sans', sans-serif; background: #f5f0e8; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #faf7f2; padding: 40px 44px; position: relative; overflow: hidden; }
+.resume::before { content: '履歴書'; position: absolute; top: 30px; right: 36px; font-family: 'Noto Serif JP', serif; font-size: 48px; color: rgba(0,0,0,0.03); writing-mode: vertical-rl; }
+.header { display: flex; align-items: center; gap: 28px; margin-bottom: 28px; }
+.header-text h1 { font-family: 'Noto Serif JP', serif; font-size: 32px; color: #2c2c2c; font-weight: 700; letter-spacing: 2px; }
+.header-text .line { width: 40px; height: 1px; background: #c9b896; margin: 10px 0; }
+.header-text .title { font-size: 11px; color: #8a7e6b; letter-spacing: 2px; }
+.header-text .contact { font-size: 10px; color: #bbb; margin-top: 8px; line-height: 1.8; }
+.section { margin-bottom: 24px; }
+.section h2 { font-family: 'Noto Serif JP', serif; font-size: 13px; color: #2c2c2c; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.section h2::after { content: ''; flex: 1; height: 1px; background: #e0d8c8; }
+.entry { display: grid; grid-template-columns: 72px 1fr; gap: 16px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #f0ebe0; }
+.entry:last-child { border-bottom: none; }
+.entry .period { font-size: 10px; color: #c9b896; padding-top: 2px; letter-spacing: 1px; }
+.entry h3 { font-size: 11px; color: #2c2c2c; font-weight: 600; }
+.entry .place { font-size: 10px; color: #999; margin: 2px 0 4px; }
+.entry p { font-size: 10px; color: #888; line-height: 1.7; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.skill-tag { display: inline-block; font-size: 10px; color: #8a7e6b; padding: 5px 14px; border: 1px solid #e0d8c8; letter-spacing: 1px; margin: 3px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="header-text">
+      <h1>{{NAME}}</h1>
+      <div class="line"></div>
+      <div class="title">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}} · {{PHONE}} · {{LOCATION}} · {{LINKEDIN}}</div>
+    </div>
+  </div>
+  <div class="section">
+    <p style="font-size:11px;color:#888;line-height:1.7;margin-bottom:14px">{{SUMMARY}}</p>
+    <h2>Journey</h2>
+    <!-- EXPERIENCE_START -->
+    <div class="entry">
+      <div class="period">{{EXP_DATE}}</div>
+      <div>
+        <h3>{{EXP_TITLE}}</h3>
+        <div class="place">{{EXP_COMPANY}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+    </div>
+    <!-- EXPERIENCE_END -->
+  </div>
+  <div class="two-col">
+    <div>
+      <div class="section">
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <span class="skill-tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+    <div>
+      <div class="section">
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <div class="period">{{EDU_YEAR}}</div>
+          <div>
+            <h3>{{EDU_DEGREE}}</h3>
+            <div class="place">{{EDU_SCHOOL}}</div>
+          </div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Tie Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Didact Gothic', sans-serif; background: #0a0a0a; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #111; overflow: hidden; color: #d0c8b8; }
+.bow-tie { width: 40px; height: 20px; background: #fff; clip-path: polygon(0 0, 40% 50%, 0 100%, 0 0); display: inline-block; }
+.header { background: #0a0a0a; padding: 26px 36px; display: flex; align-items: center; gap: 20px; border-bottom: 2px solid #333; }
+.header-text h1 { font-family: 'Libre Baskerville', serif; font-size: 28px; color: #f5f0e8; font-weight: 700; letter-spacing: 2px; }
+.header-text .role { font-size: 10px; color: #888; letter-spacing: 4px; text-transform: uppercase; margin-top: 4px; }
+.header-text .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: #555; flex-wrap: wrap; }
+.white-tie { width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #f5f0e8; display: inline-block; }
+.body { padding: 20px 36px; display: grid; grid-template-columns: 1fr 195px; gap: 26px; }
+h2 { font-family: 'Libre Baskerville', serif; font-size: 13px; color: #f5f0e8; margin-bottom: 12px; font-weight: 700; letter-spacing: 1px; padding-bottom: 6px; border-bottom: 1px solid #2a2a2a; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; color: #d0c8b8; font-weight: 600; }
+.entry .meta { font-size: 10px; color: #666; margin: 2px 0; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #777; line-height: 1.7; }
+.bt-skill { display: block; font-size: 10px; color: #888; padding: 4px 0; border-bottom: 1px solid #1e1e1e; }
+.bt-skill::before { content: '◈ '; color: #f5f0e8; font-size: 8px; }
+.summary { font-size: 11px; color: #666; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="header-text">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">
+        <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="bt-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

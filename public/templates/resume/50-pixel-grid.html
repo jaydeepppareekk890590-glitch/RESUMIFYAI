@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Grid Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Pixelify Sans', sans-serif; background: #16213e; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #0f3460; border: 4px solid #e94560; overflow: hidden; }
+.header { background: #e94560; padding: 22px 28px; display: flex; align-items: center; gap: 18px; }
+.header h1 { font-family: 'VT323', monospace; font-size: 36px; color: #fff; letter-spacing: 2px; }
+.header p { font-family: 'VT323', monospace; font-size: 18px; color: #ffd166; }
+.header .contact { font-family: 'VT323', monospace; font-size: 14px; color: rgba(255,255,255,0.8); margin-top: 4px; }
+.pixel-bar { height: 7px; display: flex; }
+.pixel-bar div { flex: 1; }
+.pixel-bar div:nth-child(1) { background: #e94560; }
+.pixel-bar div:nth-child(2) { background: #ffd166; }
+.pixel-bar div:nth-child(3) { background: #06d6a0; }
+.pixel-bar div:nth-child(4) { background: #118ab2; }
+.pixel-bar div:nth-child(5) { background: #533483; }
+.body { padding: 18px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pixel-section { padding: 14px; border: 2px solid #e94560; background: rgba(233,69,96,0.05); }
+.pixel-section h2 { font-family: 'VT323', monospace; font-size: 20px; color: #ffd166; margin-bottom: 10px; }
+.pixel-section h2::before { content: '▶ '; color: #e94560; }
+.item { margin-bottom: 8px; font-size: 12px; padding: 6px; background: rgba(255,255,255,0.05); border-left: 3px solid #e94560; }
+.item h3 { color: #fff; font-weight: 600; font-size: 12px; }
+.item p { color: rgba(255,255,255,0.5); font-size: 11px; }
+.pixel-skill { display: inline-block; padding: 4px 10px; background: #e94560; color: #fff; font-family: 'VT323', monospace; font-size: 15px; margin: 2px; border: 2px solid #fff; }
+.full-width { grid-column: 1 / -1; }
+.contact-pixels { display: flex; flex-wrap: wrap; gap: 8px; }
+.contact-pixels span { font-family: 'VT323', monospace; font-size: 15px; color: #ffd166; padding: 5px 10px; border: 2px solid #ffd166; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <p>{{ROLE}}</p>
+      <div class="contact">{{EMAIL}} // {{PHONE}} // {{LOCATION}}</div>
+    </div>
+  </div>
+  <div class="pixel-bar"><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="body">
+    <div class="pixel-section">
+      <h2>WORK</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="item">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <p>{{EXP_DATE}} | {{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="pixel-section">
+      <h2>EDUCATION</h2>
+      <!-- EDUCATION_START -->
+      <div class="item">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <p>{{EDU_YEAR}}</p>
+      </div>
+      <!-- EDUCATION_END -->
+      <h2 style="margin-top:10px">ABOUT</h2>
+      <p style="font-size:11px;color:rgba(255,255,255,0.6);line-height:1.6">{{SUMMARY}}</p>
+    </div>
+    <div class="pixel-section full-width">
+      <h2>SKILLS</h2>
+      <!-- SKILLS_START -->
+      <span class="pixel-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+    <div class="pixel-section full-width">
+      <h2>CONTACT</h2>
+      <div class="contact-pixels">
+        <span>📧 {{EMAIL}}</span>
+        <span>🌐 {{LINKEDIN}}</span>
+        <span>📍 {{LOCATION}}</span>
+        <span>📱 {{PHONE}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

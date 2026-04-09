@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terracotta Warm Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Outfit', sans-serif; background: #f5ede3; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #faf5ef; position: relative; overflow: hidden; }
+.accent-circle { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(193,108,72,0.08), transparent); top: -80px; right: -80px; pointer-events: none; }
+.header { padding: 28px 36px 20px; display: flex; gap: 24px; align-items: center; position: relative; z-index: 1; }
+.header-text h1 { font-family: 'Fraunces', serif; font-size: 32px; color: #2c1810; font-weight: 900; line-height: 1.1; }
+.header-text .subtitle { font-size: 11px; color: #c16c48; letter-spacing: 3px; margin-top: 5px; }
+.header-text .bio { font-size: 11px; color: #8a7060; line-height: 1.7; margin-top: 8px; }
+.header-contact { font-size: 10px; color: #8a7060; line-height: 1.8; margin-top: 8px; }
+.divider { height: 1px; margin: 0 36px; background: linear-gradient(90deg, #c16c48, transparent); }
+.body { padding: 20px 36px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; position: relative; z-index: 1; }
+h2 { font-family: 'Fraunces', serif; font-size: 14px; color: #2c1810; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+h2 .dot { width: 7px; height: 7px; border-radius: 50%; background: #c16c48; flex-shrink: 0; }
+.entry { margin-bottom: 12px; padding: 12px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+.entry h3 { font-size: 11px; font-weight: 600; color: #2c1810; }
+.entry .meta { font-size: 10px; color: #c16c48; margin: 2px 0 4px; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #8a7060; line-height: 1.7; }
+.warm-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.warm-tags span { padding: 5px 12px; border-radius: 7px; font-size: 10px; background: #c16c48; color: #fff; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="accent-circle"></div>
+  <div class="header">
+    <div class="header-text">
+      <h1>{{NAME}}</h1>
+      <div class="subtitle">{{ROLE}}</div>
+      <div class="bio">{{SUMMARY}}</div>
+      <div class="header-contact">{{EMAIL}} • {{PHONE}} • {{LOCATION}} • {{LINKEDIN}}</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="body">
+    <div>
+      <h2><span class="dot"></span>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2><span class="dot"></span>Specializations</h2>
+      <div class="warm-tags">
+        <!-- SKILLS_START -->
+        <span>{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <h2><span class="dot"></span>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

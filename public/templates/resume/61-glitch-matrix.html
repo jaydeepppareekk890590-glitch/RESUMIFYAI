@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Matrix Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Rajdhani', sans-serif; background: #000; color: #0ff; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #020810; position: relative; overflow: hidden; }
+.scanline { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,255,.015) 2px, rgba(0,255,255,.015) 4px); pointer-events: none; z-index: 1; }
+.content { position: relative; z-index: 2; padding: 22px 30px; }
+.glitch-header { border-bottom: 1px solid rgba(0,255,255,0.1); padding-bottom: 16px; margin-bottom: 20px; }
+.glitch-header h1 { font-family: 'Share Tech Mono', monospace; font-size: 32px; color: #0ff; text-shadow: 2px 0 #f0f, -2px 0 #0f0; letter-spacing: 3px; }
+.glitch-header .role { font-size: 11px; color: rgba(0,255,255,0.4); letter-spacing: 4px; text-transform: uppercase; margin-top: 4px; }
+.glitch-header .contact { display: flex; gap: 12px; margin-top: 10px; font-family: 'Share Tech Mono', monospace; font-size: 9px; color: rgba(0,255,255,0.3); flex-wrap: wrap; }
+.body { display: grid; grid-template-columns: 1fr 190px; gap: 22px; }
+h2 { font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 4px; color: #0f0; margin-bottom: 12px; text-transform: uppercase; }
+h2::before { content: '// '; }
+.entry { margin-bottom: 13px; border-left: 2px solid rgba(0,255,255,0.1); padding-left: 12px; }
+.entry h3 { font-size: 11px; color: rgba(255,255,255,0.85); font-weight: 600; }
+.entry .meta { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: #0f0; margin: 2px 0; }
+.entry p { font-size: 10px; color: rgba(0,255,255,0.4); line-height: 1.7; }
+.matrix-skill { display: block; font-family: 'Share Tech Mono', monospace; font-size: 10px; color: #0f0; padding: 4px 0; border-bottom: 1px solid rgba(0,255,0,0.05); }
+.matrix-skill::before { content: '> '; }
+.summary { font-size: 10px; color: rgba(0,255,255,0.4); line-height: 1.7; margin-bottom: 16px; font-family: 'Share Tech Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="scanline"></div>
+  <div class="content">
+    <div class="glitch-header">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">
+        <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+      </div>
+    </div>
+    <div class="summary">// {{SUMMARY}}</div>
+    <div class="body">
+      <div>
+        <h2>Experience</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+          <div class="meta">{{EDU_YEAR}}</div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <span class="matrix-skill">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

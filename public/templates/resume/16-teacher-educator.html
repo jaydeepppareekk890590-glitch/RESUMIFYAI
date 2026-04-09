@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Educator Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', sans-serif; background: #fef9ef; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: white; overflow: hidden; }
+.header { background: linear-gradient(135deg, #4361ee, #3a0ca3); padding: 28px 28px 22px; position: relative; }
+.header::after { content: '📚'; position: absolute; right: 24px; top: 16px; font-size: 50px; opacity: 0.15; }
+.header h1 { color: white; font-size: 24px; font-weight: 700; }
+.header .role { color: rgba(255,255,255,0.8); font-size: 12px; margin-top: 4px; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 11px; color: rgba(255,255,255,0.6); flex-wrap: wrap; }
+.body { padding: 22px 28px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #4361ee; font-weight: 700; margin-bottom: 10px; }
+.exp { margin-bottom: 14px; padding-left: 12px; border-left: 3px solid #e0d9ff; }
+.exp .title { font-weight: 600; color: #222; font-size: 12px; }
+.exp .meta { font-size: 10px; color: #888; margin: 2px 0; }
+.exp .desc { font-size: 11px; color: #555; line-height: 1.7; }
+.summary { background: #f8f6ff; border-radius: 10px; padding: 12px; font-style: italic; color: #555; font-size: 11px; line-height: 1.8; border-left: 3px solid #4361ee; margin-bottom: 16px; }
+.skill-tag { display: inline-block; padding: 4px 12px; background: #f0edff; border-radius: 12px; font-size: 11px; color: #4361ee; margin: 3px; font-weight: 600; }
+.edu-info { font-size: 11px; color: #555; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <p class="role">{{ROLE}}</p>
+    <div class="contact"><span>📧 {{EMAIL}}</span><span>📞 {{PHONE}}</span><span>📍 {{LOCATION}}</span></div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Teaching Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <p class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="meta">{{EXP_DATE}}</p>
+        <p class="desc">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="skill-tag">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:20px">Education &amp; Certs</h2>
+      <!-- EDUCATION_START -->
+      <div class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnival Fiesta Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Nunito', sans-serif; background: #fff9e6; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; }
+.banner { height: 8px; background: repeating-linear-gradient(90deg, #ff6b6b 0, #ff6b6b 20px, #feca57 20px, #feca57 40px, #48dbfb 40px, #48dbfb 60px, #ff9ff3 60px, #ff9ff3 80px, #1dd1a1 80px, #1dd1a1 100px); }
+.header { background: linear-gradient(135deg, #ff6b6b, #feca57); padding: 24px 30px; display: flex; align-items: center; gap: 22px; }
+h1 { font-family: 'Pacifico', cursive; font-size: 32px; color: #fff; text-shadow: 3px 3px 0 rgba(0,0,0,0.15); }
+.role { font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 700; margin-top: 4px; letter-spacing: 2px; }
+.contact-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.contact-strip span { padding: 4px 12px; background: rgba(255,255,255,0.3); border-radius: 20px; font-size: 10px; color: #fff; font-weight: 600; }
+.body { padding: 18px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fiesta-card { border-radius: 12px; padding: 14px; border: 3px solid; }
+.fiesta-card:nth-child(1) { border-color: #ff6b6b; background: #fff5f5; }
+.fiesta-card:nth-child(2) { border-color: #feca57; background: #fffbef; }
+.fiesta-card:nth-child(3) { border-color: #48dbfb; background: #f0fcff; grid-column: 1 / -1; }
+.fiesta-card h2 { font-family: 'Pacifico', cursive; font-size: 16px; margin-bottom: 10px; }
+.fiesta-card:nth-child(1) h2 { color: #ff6b6b; }
+.fiesta-card:nth-child(2) h2 { color: #f9a825; }
+.fiesta-card:nth-child(3) h2 { color: #03a9f4; }
+.entry { margin-bottom: 9px; padding: 8px; background: rgba(255,255,255,0.7); border-radius: 8px; }
+.entry h3 { font-size: 11px; font-weight: 800; color: #333; }
+.entry .meta { font-size: 10px; color: #999; margin: 2px 0; }
+.entry p { font-size: 10px; color: #666; line-height: 1.5; }
+.fiesta-skill { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; margin: 3px; }
+.fiesta-skill:nth-child(1) { background: #ff6b6b; color: #fff; }
+.fiesta-skill:nth-child(2) { background: #feca57; color: #333; }
+.fiesta-skill:nth-child(3) { background: #48dbfb; color: #333; }
+.fiesta-skill:nth-child(4) { background: #ff9ff3; color: #333; }
+.fiesta-skill:nth-child(5) { background: #1dd1a1; color: #fff; }
+.fiesta-skill:nth-child(6) { background: #ff6b6b; color: #fff; }
+.fiesta-skill:nth-child(7) { background: #feca57; color: #333; }
+.fiesta-skill:nth-child(8) { background: #ff9ff3; color: #333; }
+.summary { font-size: 11px; color: #666; line-height: 1.7; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="banner"></div>
+  <div class="header">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact-strip">
+        <span>📧 {{EMAIL}}</span><span>📱 {{PHONE}}</span><span>📍 {{LOCATION}}</span><span>🌐 {{LINKEDIN}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="fiesta-card">
+      <h2>🎪 Experience</h2>
+      <p class="summary">{{SUMMARY}}</p>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="fiesta-card">
+      <h2>🎓 Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div class="fiesta-card">
+      <h2>🎯 Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="fiesta-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="banner"></div>
+</div>
+</body>
+</html>

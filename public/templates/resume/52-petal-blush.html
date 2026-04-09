@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petal Blush Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Jost', sans-serif; background: #fff5f7; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; display: grid; grid-template-columns: 200px 1fr; overflow: hidden; }
+.sidebar { background: linear-gradient(180deg, #ffe4ed, #ffd6e7); padding: 28px 20px; display: flex; flex-direction: column; gap: 20px; }
+.sidebar h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #7b3554; font-weight: 500; line-height: 1.2; }
+.sidebar .role { font-size: 10px; color: #c4809a; letter-spacing: 2px; margin-top: 4px; }
+.sidebar .contact { font-size: 10px; color: #c4809a; line-height: 2; }
+.sidebar h2 { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #7b3554; margin-bottom: 8px; }
+.skill-petal { display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.6); border-radius: 20px; font-size: 10px; color: #7b3554; margin: 3px; }
+.main { padding: 28px 24px; overflow: hidden; }
+.section { margin-bottom: 20px; }
+.section h2 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #7b3554; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #ffd6e7; }
+.entry { margin-bottom: 12px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #333; }
+.entry .meta { font-size: 10px; color: #c4809a; margin: 2px 0; }
+.entry p { font-size: 10px; color: #777; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <div class="contact">{{EMAIL}}<br>{{PHONE}}<br>{{LOCATION}}<br>{{LINKEDIN}}</div>
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="skill-petal">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+    <div>
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div style="font-size:10px;color:#7b3554;margin-bottom:6px">
+        <div style="font-weight:600">{{EDU_DEGREE}}</div>
+        <div style="color:#c4809a">{{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+  <div class="main">
+    <p style="font-size:11px;color:#777;line-height:1.7;margin-bottom:18px">{{SUMMARY}}</p>
+    <div class="section">
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

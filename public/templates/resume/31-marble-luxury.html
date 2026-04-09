@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marble Luxury Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Lato', sans-serif; background: linear-gradient(135deg, #f5f0e8, #ece4d8); margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; position: relative; overflow: hidden; }
+.marble-top { height: 140px; background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 30%, #333 50%, #1a1a1a 70%, #2c2c2c 100%); display: flex; align-items: center; padding: 0 36px; gap: 24px; position: relative; }
+.marble-top::after { content: ''; position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(90deg, #d4a853, #f0d78c, #d4a853); }
+.top-info h1 { font-family: 'Cinzel', serif; font-size: 28px; color: #fff; font-weight: 700; letter-spacing: 3px; }
+.top-info .role { font-size: 10px; letter-spacing: 5px; color: #d4a853; margin-top: 5px; text-transform: uppercase; }
+.top-info .contact { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 10px; line-height: 1.8; }
+.body { display: grid; grid-template-columns: 1fr 240px; padding: 28px 36px; gap: 28px; }
+h2 { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #d4a853; display: inline-block; }
+.section { margin-bottom: 22px; }
+.entry { margin-bottom: 14px; position: relative; padding-left: 14px; }
+.entry::before { content: '◆'; position: absolute; left: 0; top: 1px; color: #d4a853; font-size: 8px; }
+.entry h3 { font-size: 11px; font-weight: 700; color: #1a1a1a; }
+.entry .meta { font-size: 10px; color: #d4a853; letter-spacing: 1px; margin: 2px 0 4px; }
+.entry p { font-size: 10px; color: #777; line-height: 1.7; }
+.sidebar { border-left: 1px solid #eee; padding-left: 22px; }
+.cert-item { font-size: 10px; color: #666; margin-bottom: 7px; padding-left: 10px; border-left: 2px solid #d4a853; }
+.summary { font-size: 10px; color: #777; line-height: 1.7; margin-bottom: 14px; padding: 10px; background: #faf8f5; border-left: 3px solid #d4a853; }
+.bottom-gold { height: 3px; background: linear-gradient(90deg, #d4a853, #f0d78c, #d4a853); position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="marble-top">
+    <div class="top-info">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}} • {{PHONE}} • {{LOCATION}} • {{LINKEDIN}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <div class="section">
+        <h2>Experience</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+      </div>
+      <div class="section">
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+          <div class="meta">{{EDU_YEAR}}</div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="section">
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <div class="cert-item">{{SKILL_NAME}}</div>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+  <div class="bottom-gold"></div>
+</div>
+</body>
+</html>

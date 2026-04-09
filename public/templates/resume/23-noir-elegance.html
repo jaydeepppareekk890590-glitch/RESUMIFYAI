@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir Elegance Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Raleway', sans-serif; background: #111; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; display: grid; grid-template-columns: 240px 1fr; overflow: hidden; }
+.left { background: #000; padding: 36px 24px; display: flex; flex-direction: column; align-items: center; position: relative; }
+.left::after { content: ''; position: absolute; right: 0; top: 40px; bottom: 40px; width: 1px; background: linear-gradient(180deg, transparent, #c9a96e, transparent); }
+.left h1 { font-family: 'Playfair Display', serif; font-size: 26px; color: #fff; text-align: center; font-weight: 900; letter-spacing: 2px; margin-bottom: 6px; }
+.left .title-role { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: #c9a96e; text-align: center; margin: 6px 0 20px; }
+.left-section { width: 100%; margin-bottom: 20px; }
+.left-section h3 { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #c9a96e; margin-bottom: 10px; font-weight: 600; }
+.contact-item { font-size: 10px; color: #888; margin-bottom: 6px; padding-left: 12px; position: relative; }
+.contact-item::before { content: '›'; position: absolute; left: 0; color: #c9a96e; }
+.right { background: #0d0d0d; padding: 36px 28px; overflow: hidden; }
+.right h2 { font-family: 'Playfair Display', serif; font-size: 16px; color: #fff; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #222; font-weight: 400; }
+.right h2 em { font-style: normal; color: #c9a96e; }
+.section { margin-bottom: 22px; }
+.exp { margin-bottom: 14px; padding-left: 16px; border-left: 1px solid #222; position: relative; }
+.exp::before { content: ''; position: absolute; left: -3px; top: 5px; width: 5px; height: 5px; background: #c9a96e; border-radius: 50%; }
+.exp h4 { font-size: 12px; color: #fff; font-weight: 600; }
+.exp .dates { font-size: 9px; color: #c9a96e; letter-spacing: 2px; margin: 3px 0 5px; }
+.exp p { font-size: 10px; color: #777; line-height: 1.7; }
+.skill-item { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #999; margin-bottom: 8px; }
+.skill-bar { width: 70px; height: 3px; background: #1a1a1a; border-radius: 2px; overflow: hidden; }
+.skill-bar span { display: block; height: 100%; background: linear-gradient(90deg, #c9a96e, #e8d5a3); border-radius: 2px; width: 85%; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="left">
+    <h1>{{NAME}}</h1>
+    <div class="title-role">{{ROLE}}</div>
+    <div class="left-section">
+      <h3>Contact</h3>
+      <div class="contact-item">{{EMAIL}}</div>
+      <div class="contact-item">{{PHONE}}</div>
+      <div class="contact-item">{{LOCATION}}</div>
+      <div class="contact-item">{{LINKEDIN}}</div>
+    </div>
+    <div class="left-section">
+      <h3>Skills</h3>
+      <!-- SKILLS_START -->
+      <div class="contact-item">{{SKILL_NAME}}</div>
+      <!-- SKILLS_END -->
+    </div>
+    <div class="left-section">
+      <h3>Education</h3>
+      <!-- EDUCATION_START -->
+      <div class="contact-item">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+  <div class="right">
+    <div class="section">
+      <p style="font-size:10px;color:#777;line-height:1.7;margin-bottom:14px">{{SUMMARY}}</p>
+      <h2>Career <em>Path</em></h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <h4>{{EXP_TITLE}} — {{EXP_COMPANY}}</h4>
+        <div class="dates">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

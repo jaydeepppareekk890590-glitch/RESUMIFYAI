@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographic Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #eff6ff, #dbeafe); margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; padding: 14mm; overflow: hidden; }
+.header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.avatar { width: 64px; height: 64px; border-radius: 16px; background: #2563eb; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; }
+.header h2 { font-size: 22px; font-weight: 800; color: #1a1a1a; }
+.header .role { font-size: 12px; color: #6b7280; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+.stat { background: #fff; border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.stat .num { font-size: 22px; font-weight: 900; color: #2563eb; }
+.stat .label { font-size: 10px; color: #6b7280; margin-top: 2px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-size: 12px; }
+.card h4 { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+.career-item { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.career-item span:first-child { font-weight: 500; color: #1a1a1a; }
+.career-item span:last-child { color: #6b7280; }
+.skill-row { margin-bottom: 8px; }
+.skill-row .meta { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 3px; }
+.skill-row .meta span:first-child { color: #1a1a1a; }
+.skill-row .meta span:last-child { color: #6b7280; }
+.bar-bg { height: 6px; background: #f3f4f6; border-radius: 6px; }
+.bar-fill { height: 100%; background: #2563eb; border-radius: 6px; }
+.footer { margin-top: 16px; text-align: center; font-size: 11px; color: #6b7280; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header"><div class="avatar">{{NAME}}</div><div><h2>{{NAME}}</h2><div class="role">{{ROLE}}</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="num">12+</div><div class="label">Years Exp</div></div>
+    <div class="stat"><div class="num">$40M</div><div class="label">Revenue Driven</div></div>
+    <div class="stat"><div class="num">300%</div><div class="label">Avg ROI</div></div>
+    <div class="stat"><div class="num">50+</div><div class="label">Campaigns</div></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h4>Career Path</h4>
+      <!-- EXPERIENCE_START -->
+      <div class="career-item"><span>{{EXP_TITLE}} — {{EXP_COMPANY}}</span><span>{{EXP_DATE}}</span></div>
+      <!-- EXPERIENCE_END -->
+      <div style="margin-top:12px;color:#6b7280;line-height:1.6">{{SUMMARY}}</div>
+    </div>
+    <div class="card">
+      <h4>Core Skills</h4>
+      <!-- SKILLS_START -->
+      <div class="skill-row"><div class="meta"><span>{{SKILL_NAME}}</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div></div>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="footer">{{EMAIL}} • {{LINKEDIN}} • {{LOCATION}} • {{PHONE}}</div>
+  <div class="footer" style="margin-top:6px">
+    <!-- EDUCATION_START -->
+    {{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})
+    <!-- EDUCATION_END -->
+  </div>
+</div>
+</body>
+</html>

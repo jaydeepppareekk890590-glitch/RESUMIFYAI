@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glass Morphism Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: rgba(255,255,255,0.12); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); padding: 32px 36px; color: #fff; position: relative; overflow: hidden; }
+.resume::before { content: ''; position: absolute; top: -80px; right: -80px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+.top { display: flex; gap: 28px; align-items: center; margin-bottom: 24px; }
+.intro h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
+.intro .tagline { font-size: 12px; font-weight: 300; margin-top: 6px; color: rgba(255,255,255,0.7); letter-spacing: 1px; }
+.intro .contact-row { display: flex; gap: 16px; margin-top: 10px; font-size: 10px; color: rgba(255,255,255,0.5); flex-wrap: wrap; }
+.glass-card { background: rgba(255,255,255,0.08); border-radius: 14px; padding: 18px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; }
+.grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; }
+h2 { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; font-weight: 600; }
+.exp-item { margin-bottom: 12px; }
+.exp-item h3 { font-size: 12px; font-weight: 700; }
+.exp-item .meta { font-size: 10px; color: rgba(255,255,255,0.4); margin: 2px 0 4px; }
+.exp-item p { font-size: 11px; line-height: 1.6; color: rgba(255,255,255,0.65); }
+.pill { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 500; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); margin: 2px 3px 2px 0; }
+.edu-info { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="top">
+    <div class="intro">
+      <h1>{{NAME}}</h1>
+      <div class="tagline">{{ROLE}}</div>
+      <div class="contact-row">
+        <span>{{EMAIL}}</span>
+        <span>{{LOCATION}}</span>
+        <span>{{PHONE}}</span>
+        <span>{{LINKEDIN}}</span>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px">{{SUMMARY}}</p>
+  <div class="grid">
+    <div>
+      <div class="glass-card">
+        <h2>Career Journey</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="exp-item">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+      </div>
+    </div>
+    <div>
+      <div class="glass-card">
+        <h2>Capabilities</h2>
+        <!-- SKILLS_START -->
+        <span class="pill">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <div class="glass-card">
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+        <!-- EDUCATION_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death Metal Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Barlow', sans-serif; background: #0a0000; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #0e0000; overflow: hidden; color: #ccc; }
+.metal-border { border: 2px solid #440000; margin: 8px; height: calc(100% - 16px); display: flex; flex-direction: column; }
+.header { padding: 20px 24px; background: linear-gradient(180deg, #1a0000, #0e0000); border-bottom: 2px solid #aa0000; }
+.header h1 { font-family: 'Metal Mania', cursive; font-size: 30px; color: #cc2200; text-shadow: 0 0 10px rgba(200,34,0,0.3); letter-spacing: 2px; }
+.header .role { font-size: 11px; color: rgba(200,50,0,0.5); letter-spacing: 4px; margin-top: 4px; text-transform: uppercase; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: rgba(200,100,100,0.3); flex-wrap: wrap; }
+.body { padding: 16px 24px; display: grid; grid-template-columns: 1fr 190px; gap: 20px; flex: 1; }
+h2 { font-family: 'Metal Mania', cursive; font-size: 16px; color: #aa2200; margin-bottom: 12px; letter-spacing: 2px; }
+.entry { margin-bottom: 12px; padding-left: 10px; border-left: 2px solid rgba(170,34,0,0.2); }
+.entry h3 { font-size: 11px; color: #ddd; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.entry .meta { font-size: 9px; color: rgba(200,50,0,0.5); margin: 2px 0; letter-spacing: 2px; }
+.entry p { font-size: 10px; color: #666; line-height: 1.6; }
+.metal-skill { display: block; font-size: 10px; color: rgba(200,100,100,0.6); padding: 4px 0; border-bottom: 1px solid rgba(170,34,0,0.08); letter-spacing: 1px; text-transform: uppercase; }
+.summary { font-size: 10px; color: #555; line-height: 1.6; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="metal-border">
+    <div class="header">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">
+        <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+      </div>
+    </div>
+    <div class="body">
+      <div>
+        <div class="summary">{{SUMMARY}}</div>
+        <h2>Experience</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+          <div class="meta">{{EXP_DATE}}</div>
+          <p>{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <div class="entry">
+          <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+          <div class="meta">{{EDU_YEAR}}</div>
+        </div>
+        <!-- EDUCATION_END -->
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <span class="metal-skill">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

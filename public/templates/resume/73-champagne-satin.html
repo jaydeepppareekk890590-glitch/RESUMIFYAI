@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Champagne Satin Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Didact Gothic', sans-serif; background: #f5f0e4; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: linear-gradient(160deg, #fdfaf3, #f8f3ea); overflow: hidden; }
+.champagne-bar { height: 6px; background: linear-gradient(90deg, #c9a96e, #f0d88a, #c9a96e); }
+.header { padding: 26px 40px; text-align: center; }
+.header h1 { font-family: 'EB Garamond', serif; font-size: 34px; color: #3d2d18; font-weight: 500; letter-spacing: 3px; }
+.header .role { font-size: 10px; color: #c9a96e; letter-spacing: 5px; text-transform: uppercase; margin-top: 5px; }
+.header .contact { display: flex; justify-content: center; gap: 16px; margin-top: 12px; font-size: 10px; color: #8a7558; flex-wrap: wrap; }
+.satin-rule { height: 1px; background: linear-gradient(90deg, transparent, #c9a96e, transparent); margin: 0 40px; }
+.body { padding: 22px 40px; display: grid; grid-template-columns: 1fr 190px; gap: 26px; }
+h2 { font-family: 'EB Garamond', serif; font-size: 15px; color: #3d2d18; margin-bottom: 12px; font-weight: 500; letter-spacing: 2px; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; color: #3d2d18; font-weight: 600; letter-spacing: 0.5px; }
+.entry .meta { font-size: 10px; color: #c9a96e; margin: 2px 0; letter-spacing: 1px; }
+.entry p { font-size: 10px; color: #6a5840; line-height: 1.7; }
+.champagne-skill { display: block; font-size: 10px; color: #6a5840; padding: 5px 0; border-bottom: 1px solid rgba(201,169,110,0.15); }
+.champagne-skill::before { content: '— '; color: #c9a96e; }
+.summary { font-size: 11px; color: #6a5840; line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="champagne-bar"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>·</span><span>{{PHONE}}</span><span>·</span><span>{{LOCATION}}</span><span>·</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="satin-rule"></div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="champagne-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="champagne-bar"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Punk Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Exo 2', sans-serif; background: #0a0a0a; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #0e0e14; border: none; position: relative; overflow: hidden; }
+.scanline { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,136,0.01) 2px, rgba(0,255,136,0.01) 4px); pointer-events: none; z-index: 10; }
+.header { padding: 28px 36px; display: flex; align-items: center; gap: 24px; border-bottom: 1px solid rgba(0,255,136,0.1); position: relative; }
+.header-info h1 { font-family: 'Orbitron', sans-serif; font-size: 30px; font-weight: 900; color: #00ff88; text-shadow: 0 0 20px rgba(0,255,136,0.3); }
+.header-info .role { font-size: 10px; letter-spacing: 6px; color: #ff0066; text-transform: uppercase; margin-top: 4px; }
+.header-info .id { font-size: 9px; color: rgba(0,255,136,0.2); margin-top: 6px; font-family: monospace; }
+.content { display: grid; grid-template-columns: 1.3fr 1fr; padding: 24px 36px; gap: 28px; color: #6a8f7a; }
+h2 { font-family: 'Orbitron', sans-serif; font-size: 10px; letter-spacing: 4px; color: #ff0066; margin-bottom: 12px; font-weight: 600; }
+.exp { margin-bottom: 15px; padding-left: 12px; border-left: 2px solid rgba(0,255,136,0.15); position: relative; }
+.exp::before { content: '▸'; position: absolute; left: -7px; top: 0; color: #00ff88; font-size: 10px; }
+.exp h3 { font-size: 11px; color: #cceedd; font-weight: 600; }
+.exp .meta { font-size: 9px; color: #ff0066; letter-spacing: 2px; margin: 2px 0 4px; }
+.exp p { font-size: 10px; line-height: 1.7; color: rgba(106,143,122,0.8); }
+.tech-grid { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+.tech-grid span { padding: 4px 10px; font-size: 9px; border: 1px solid rgba(0,255,136,0.15); color: #00ff88; letter-spacing: 1px; }
+.contact-neon { font-size: 10px; color: rgba(0,255,136,0.3); line-height: 1.8; }
+.contact-neon span { color: #00ff88; }
+.footer-bar { height: 3px; background: linear-gradient(90deg, #00ff88, #ff0066, #00ff88); }
+.summary { font-size: 10px; color: rgba(106,143,122,0.8); line-height: 1.7; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="scanline"></div>
+  <div class="header">
+    <div class="header-info">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="id">{{EMAIL}} // {{LOCATION}} // {{PHONE}}</div>
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Mission Log</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2 style="margin-top:16px">Training</h2>
+      <!-- EDUCATION_START -->
+      <div class="exp">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Tech Arsenal</h2>
+      <div class="tech-grid">
+        <!-- SKILLS_START -->
+        <span>{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <h2>Uplink</h2>
+      <div class="contact-neon">
+        <span>{{EMAIL}}</span><br>
+        {{LINKEDIN}}<br>
+        {{PHONE}}<br>
+        {{LOCATION}}
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"></div>
+</div>
+</body>
+</html>

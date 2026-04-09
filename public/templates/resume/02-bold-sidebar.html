@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bold Sidebar Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f0f0; margin: 0; padding: 0; overflow: hidden; }
+.resume { display: flex; width: 210mm; height: 297mm; box-shadow: 0 4px 24px rgba(0,0,0,0.1); overflow: hidden; }
+.sidebar { width: 35%; background: #6d28d9; color: #fff; padding: 32px 24px; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; margin-bottom: 12px; }
+.sidebar h2 { font-size: 18px; font-weight: 700; }
+.sidebar .role { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+.sidebar h4 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 20px 0 8px; }
+.sidebar p { font-size: 11px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+.skill-bar { margin-bottom: 8px; }
+.skill-bar span { font-size: 11px; }
+.bar-bg { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 4px; margin-top: 3px; }
+.bar-fill { height: 100%; border-radius: 4px; background: rgba(255,255,255,0.7); }
+.main { flex: 1; background: #fff; padding: 32px; }
+.main h3 { font-size: 14px; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; margin-bottom: 12px; }
+.main .exp { margin-bottom: 16px; font-size: 12px; }
+.main .exp .title { font-weight: 600; color: #1a1a1a; }
+.main .exp .date { color: #6b7280; margin-left: 8px; font-weight: 400; }
+.main .exp p { color: #6b7280; margin-top: 4px; line-height: 1.5; }
+.section { margin-bottom: 24px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="sidebar">
+    <div class="avatar">{{NAME}}</div>
+    <h2>{{NAME}}</h2>
+    <div class="role">{{ROLE}}</div>
+    <h4>Contact</h4>
+    <p>{{EMAIL}}<br>{{PHONE}}<br>{{LINKEDIN}}</p>
+    <h4>Skills</h4>
+    <!-- SKILLS_START -->
+    <div class="skill-bar"><span>{{SKILL_NAME}}</span><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div></div>
+    <!-- SKILLS_END -->
+    <h4>Languages</h4>
+    <p>English — Native<br>Spanish — Fluent</p>
+  </div>
+  <div class="main">
+    <div class="section">
+      <h3>Professional Summary</h3>
+      <p style="font-size:12px;color:#6b7280;line-height:1.6">{{SUMMARY}}</p>
+    </div>
+    <div class="section">
+      <h3>Experience</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="exp"><span class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</span><span class="date">{{EXP_DATE}}</span><p>{{EXP_DESC}}</p></div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="section">
+      <h3>Education</h3>
+      <!-- EDUCATION_START -->
+      <p style="font-size:12px;font-weight:600;color:#1a1a1a">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

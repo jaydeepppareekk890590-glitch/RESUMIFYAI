@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modular Grid Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f4f6; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; }
+.top-bar { padding: 28px 32px; background: linear-gradient(135deg, #7c3aed, #9333ea); color: #fff; }
+.top-bar h2 { font-size: 20px; font-weight: 900; }
+.top-bar .role { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 2px; }
+.top-bar .contact { display: flex; gap: 12px; margin-top: 8px; font-size: 10px; color: rgba(255,255,255,0.6); }
+.body { padding: 24px; display: grid; grid-template-columns: 2fr 1fr; gap: 16px; font-size: 12px; }
+.module { padding: 16px; border-radius: 10px; background: #f9fafb; }
+.module h4 { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+.exp-item { margin-bottom: 10px; }
+.exp-item .title { font-weight: 600; color: #1a1a1a; }
+.exp-item p { color: #6b7280; margin-top: 2px; line-height: 1.5; }
+.impact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+.impact .num { font-size: 20px; font-weight: 900; color: #7c3aed; }
+.impact .label { font-size: 9px; color: #6b7280; }
+.method { color: #6b7280; font-size: 11px; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="top-bar">
+    <h2>{{NAME}}</h2>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact"><span>{{EMAIL}}</span><span>•</span><span>{{LOCATION}}</span><span>•</span><span>{{LINKEDIN}}</span></div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="module" style="margin-bottom:16px">
+        <h4>Experience</h4>
+        <!-- EXPERIENCE_START -->
+        <div class="exp-item"><div class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</div><p>{{EXP_DATE}} • {{EXP_DESC}}</p></div>
+        <!-- EXPERIENCE_END -->
+      </div>
+      <div class="module">
+        <h4>Key Impact</h4>
+        <div class="impact">
+          <div><div class="num">500+</div><div class="label">Studies</div></div>
+          <div><div class="num">92%</div><div class="label">Satisfaction</div></div>
+          <div><div class="num">£2M+</div><div class="label">Saved</div></div>
+        </div>
+        <p style="color:#6b7280;margin-top:10px;line-height:1.6">{{SUMMARY}}</p>
+      </div>
+    </div>
+    <div>
+      <div class="module" style="margin-bottom:16px">
+        <h4>Methods</h4>
+        <!-- SKILLS_START -->
+        <p class="method">→ {{SKILL_NAME}}</p>
+        <!-- SKILLS_END -->
+      </div>
+      <div class="module">
+        <h4>Education</h4>
+        <p style="color:#6b7280;font-size:11px">
+          <!-- EDUCATION_START -->
+          {{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})<br>
+          <!-- EDUCATION_END -->
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

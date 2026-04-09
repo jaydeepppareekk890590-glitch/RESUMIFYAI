@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emerald Luxe Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Karla', sans-serif; background: #071a0e; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: linear-gradient(160deg, #071a0e, #050f08); overflow: hidden; color: #a8c8a0; }
+.emerald-line { height: 4px; background: linear-gradient(90deg, #1a5c2e, #4aaa6a, #1a5c2e); }
+.header { padding: 24px 36px; border-bottom: 1px solid rgba(74,170,106,0.1); }
+.header h1 { font-family: 'Cormorant', serif; font-size: 32px; color: #a8d8a0; font-weight: 500; letter-spacing: 3px; }
+.header .role { font-size: 10px; color: rgba(74,170,106,0.45); letter-spacing: 5px; text-transform: uppercase; margin-top: 5px; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: rgba(168,200,160,0.3); flex-wrap: wrap; }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 195px; gap: 24px; }
+h2 { font-family: 'Cormorant', serif; font-size: 17px; color: #4aaa6a; margin-bottom: 12px; font-weight: 400; letter-spacing: 2px; }
+.entry { margin-bottom: 13px; padding-left: 12px; border-left: 1px solid rgba(74,170,106,0.08); }
+.entry h3 { font-size: 11px; color: #a8d8a0; font-weight: 600; }
+.entry .meta { font-size: 9px; color: rgba(74,170,106,0.35); margin: 2px 0; letter-spacing: 2px; }
+.entry p { font-size: 10px; color: rgba(168,200,160,0.35); line-height: 1.7; }
+.emerald-skill { display: block; font-size: 10px; color: rgba(74,170,106,0.5); padding: 4px 0; border-bottom: 1px solid rgba(74,170,106,0.07); }
+.emerald-skill::before { content: '◆ '; color: rgba(74,170,106,0.3); font-size: 7px; }
+.summary { font-size: 11px; color: rgba(168,200,160,0.35); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="emerald-line"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="emerald-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+  <div class="emerald-line" style="position:absolute;bottom:0;left:0;right:0"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shattered Glass Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Exo 2', sans-serif; background: #0d0d1a; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #0d0d1a; overflow: hidden; position: relative; color: #cdd; }
+.shard { position: absolute; background: rgba(100,150,255,0.03); clip-path: polygon(0 0, 100% 20%, 80% 100%, 10% 90%); }
+.shard1 { width:300px; height:300px; top:-50px; right:-50px; }
+.shard2 { width:200px; height:200px; bottom:50px; left:-30px; clip-path: polygon(20% 0, 100% 10%, 90% 100%, 0 80%); }
+.header { padding: 24px 32px; border-bottom: 1px solid rgba(100,150,255,0.1); position: relative; z-index: 2; }
+.header h1 { font-family: 'Rajdhani', sans-serif; font-size: 32px; color: #c8d8ff; font-weight: 700; letter-spacing: 2px; }
+.header .role { font-size: 11px; color: rgba(100,150,255,0.5); letter-spacing: 4px; text-transform: uppercase; margin-top: 4px; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: rgba(200,216,255,0.3); flex-wrap: wrap; }
+.body { padding: 20px 32px; display: grid; grid-template-columns: 1fr 200px; gap: 22px; position: relative; z-index: 2; }
+h2 { font-family: 'Rajdhani', sans-serif; font-size: 13px; color: rgba(100,150,255,0.7); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+.entry { margin-bottom: 13px; padding-left: 12px; border-left: 1px solid rgba(100,150,255,0.1); }
+.entry h3 { font-size: 11px; color: #c8d8ff; font-weight: 600; }
+.entry .meta { font-size: 9px; color: rgba(100,150,255,0.4); margin: 2px 0; letter-spacing: 2px; }
+.entry p { font-size: 10px; color: rgba(200,216,255,0.35); line-height: 1.7; }
+.shard-skill { display: block; font-size: 10px; color: rgba(100,150,255,0.6); padding: 4px 0; border-bottom: 1px solid rgba(100,150,255,0.06); }
+.summary { font-size: 10px; color: rgba(200,216,255,0.35); line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="shard shard1"></div>
+  <div class="shard shard2"></div>
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="shard-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

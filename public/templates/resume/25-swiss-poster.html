@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss Poster Resume</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'IBM Plex Sans', sans-serif; background: #e8e4df; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; position: relative; overflow: hidden; }
+.top-bar { height: 10px; background: #ff3d00; }
+.header { display: grid; grid-template-columns: 200px 1fr; min-height: 180px; }
+.photo-col { background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+.photo { width: 140px; height: 160px; background: #2a2a2a; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555; letter-spacing: 2px; font-family: monospace; }
+.name-col { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+.name-col h1 { font-size: 44px; font-weight: 700; line-height: 1; color: #1a1a1a; letter-spacing: -2px; }
+.name-col h1 span { color: #ff3d00; }
+.name-col .role { font-size: 12px; font-weight: 300; color: #666; margin-top: 8px; letter-spacing: 3px; text-transform: uppercase; }
+.name-col .contact { margin-top: 14px; font-size: 11px; color: #999; line-height: 1.8; }
+.body { display: grid; grid-template-columns: 200px 1fr; }
+.sidebar { background: #f5f3f0; padding: 22px; }
+.sidebar h2 { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #ff3d00; font-weight: 700; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #ff3d00; }
+.sidebar-section { margin-bottom: 20px; }
+.sidebar p { font-size: 10px; color: #666; line-height: 1.7; margin-bottom: 3px; }
+.main { padding: 22px 28px; }
+.main h2 { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #1a1a1a; font-weight: 700; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #1a1a1a; }
+.main-section { margin-bottom: 20px; }
+.entry { display: grid; grid-template-columns: 60px 1fr; gap: 12px; margin-bottom: 14px; }
+.entry .year { font-size: 10px; font-weight: 600; color: #ff3d00; padding-top: 2px; }
+.entry h3 { font-size: 12px; font-weight: 600; color: #1a1a1a; }
+.entry .company { font-size: 10px; color: #999; margin: 2px 0 4px; }
+.entry p { font-size: 10px; color: #666; line-height: 1.6; }
+.bottom-bar { height: 4px; background: #1a1a1a; position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="top-bar"></div>
+  <div class="header">
+    <div class="photo-col"><div class="photo">PHOTO</div></div>
+    <div class="name-col">
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}}<br>{{PHONE}}<br>{{LOCATION}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <h2>Skills</h2>
+        <!-- SKILLS_START -->
+        <p>{{SKILL_NAME}}</p>
+        <!-- SKILLS_END -->
+      </div>
+      <div class="sidebar-section">
+        <h2>Education</h2>
+        <!-- EDUCATION_START -->
+        <p>{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+        <!-- EDUCATION_END -->
+      </div>
+    </div>
+    <div class="main">
+      <p style="font-size:10px;color:#666;line-height:1.7;margin-bottom:14px">{{SUMMARY}}</p>
+      <div class="main-section">
+        <h2>Experience</h2>
+        <!-- EXPERIENCE_START -->
+        <div class="entry">
+          <div class="year">{{EXP_DATE}}</div>
+          <div>
+            <h3>{{EXP_TITLE}}</h3>
+            <div class="company">{{EXP_COMPANY}}</div>
+            <p>{{EXP_DESC}}</p>
+          </div>
+        </div>
+        <!-- EXPERIENCE_END -->
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar"></div>
+</div>
+</body>
+</html>

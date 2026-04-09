@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0a; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #111827; color: #f1f5f9; padding: 14mm; box-shadow: 0 8px 32px rgba(0,0,0,0.4); overflow: hidden; }
+.header h1 { font-size: 32px; font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+.accent { color: #34d399; }
+.divider { width: 48px; height: 3px; background: #34d399; margin: 12px 0; }
+.subtitle { font-size: 13px; color: #34d399; }
+.contact { font-size: 11px; color: #94a3b8; margin-top: 6px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 24px; font-size: 12px; }
+h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #34d399; margin-bottom: 12px; }
+.exp-item { margin-bottom: 14px; }
+.exp-item .title { font-weight: 600; color: #f1f5f9; }
+.exp-item .date { color: #64748b; font-size: 10px; }
+.exp-item .desc { color: #94a3b8; margin-top: 4px; line-height: 1.5; }
+.cert p { color: #94a3b8; margin-bottom: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { padding: 4px 10px; border-radius: 4px; font-size: 10px; background: rgba(52,211,153,0.1); color: #34d399; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="divider"></div>
+    <div class="subtitle">{{ROLE}}</div>
+    <div class="contact">{{EMAIL}} • {{LOCATION}} • {{PHONE}}</div>
+  </div>
+  <div class="grid">
+    <div>
+      <h3>Experience</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="exp-item"><div class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</div><div class="date">{{EXP_DATE}}</div><div class="desc">{{EXP_DESC}}</div></div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h3>Certifications</h3>
+      <div class="cert"><p>✓ CISSP</p><p>✓ OSCP</p><p>✓ CEH</p><p>✓ AWS Security Specialty</p></div>
+      <h3 style="margin-top:20px">Tech Stack</h3>
+      <div class="tags">
+        <!-- SKILLS_START -->
+        <span class="tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <h3 style="margin-top:20px">Education</h3>
+      <!-- EDUCATION_START -->
+      <p style="color:#94a3b8">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+      <h3 style="margin-top:20px">Summary</h3>
+      <p style="color:#94a3b8">{{SUMMARY}}</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

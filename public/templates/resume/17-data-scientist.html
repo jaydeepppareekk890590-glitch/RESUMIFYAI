@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Scientist Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #0f0f1a; color: #e0e0e0; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #13132b; border: none; overflow: hidden; }
+.header { padding: 26px 28px; background: linear-gradient(135deg, #13132b, #1a1a3e); }
+.header h1 { font-size: 26px; font-weight: 800; background: linear-gradient(135deg, #a78bfa, #818cf8, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header .role { color: #818cf8; font-size: 12px; margin-top: 4px; }
+.header .contact { display: flex; gap: 14px; margin-top: 8px; font-size: 11px; color: #6b6b9d; flex-wrap: wrap; }
+.body { padding: 20px 28px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+h2 { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #818cf8; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+h2::before { content: '◈'; font-size: 12px; }
+.exp { margin-bottom: 12px; padding: 10px; background: #1a1a3a; border-radius: 8px; border: 1px solid #2a2a4a; }
+.exp .t { font-weight: 600; color: #e0e0f0; font-size: 12px; }
+.exp .m { font-size: 10px; color: #6b6b9d; margin: 2px 0; }
+.exp .d { font-size: 11px; color: #9999bb; line-height: 1.7; }
+.tech-tag { display: inline-block; padding: 3px 8px; background: #1a1a3a; border: 1px solid #2a2a4a; border-radius: 5px; font-size: 10px; color: #a78bfa; margin: 2px; }
+.edu-info { font-size: 11px; color: #9999bb; line-height: 1.8; }
+.summary { font-size: 11px; color: #9999bb; line-height: 1.7; margin-bottom: 14px; padding: 10px; background: #1a1a3a; border-radius: 8px; border-left: 3px solid #818cf8; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <p class="role">{{ROLE}}</p>
+    <div class="contact"><span>{{EMAIL}}</span><span>{{LINKEDIN}}</span><span>📍 {{LOCATION}}</span><span>📞 {{PHONE}}</span></div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="exp">
+        <p class="t">{{EXP_TITLE}} — {{EXP_COMPANY}}</p>
+        <p class="m">{{EXP_DATE}}</p>
+        <p class="d">{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Tech Stack</h2>
+      <div>
+        <!-- SKILLS_START -->
+        <span class="tech-tag">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+      <h2 style="margin-top:16px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="edu-info">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

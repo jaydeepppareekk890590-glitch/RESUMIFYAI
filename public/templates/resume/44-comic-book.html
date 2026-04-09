@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comic Book Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Comic Neue', cursive; background: #fff9c4; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; border: 4px solid #222; background: #fff; overflow: hidden; }
+.header { background: #ff1744; color: #fff; padding: 20px 24px; position: relative; overflow: hidden; }
+.header::after { content: 'POW!'; font-family: 'Bangers', cursive; font-size: 48px; position: absolute; top: 8px; right: 16px; color: #ffeb3b; text-shadow: 3px 3px 0 #222; transform: rotate(12deg); opacity: 0.3; }
+.header-content { display: flex; align-items: center; gap: 18px; position: relative; z-index: 1; }
+h1 { font-family: 'Bangers', cursive; font-size: 38px; letter-spacing: 2px; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); }
+.subtitle { font-size: 13px; font-weight: 700; margin-top: 2px; }
+.contact-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; font-size: 10px; color: rgba(255,255,255,0.9); }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 4px solid #222; }
+.panel { padding: 16px; border: 2px solid #222; position: relative; }
+.panel.full { grid-column: 1 / -1; }
+.panel h2 { font-family: 'Bangers', cursive; font-size: 20px; color: #ff1744; margin-bottom: 10px; position: relative; display: inline-block; }
+.panel h2::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background: #ffeb3b; }
+.speech-bubble { background: #f5f5f5; border: 3px solid #222; border-radius: 14px; padding: 10px 12px; margin-bottom: 8px; }
+.speech-bubble h3 { font-size: 12px; font-weight: 700; color: #222; }
+.speech-bubble .meta { font-size: 10px; color: #888; margin: 2px 0; }
+.speech-bubble p { font-size: 11px; color: #555; line-height: 1.5; }
+.pow-skills { display: flex; flex-wrap: wrap; gap: 7px; }
+.pow-skill { font-family: 'Bangers', cursive; font-size: 13px; padding: 6px 14px; background: #ffeb3b; border: 3px solid #222; border-radius: 4px; box-shadow: 3px 3px 0 #222; }
+.pow-skill:nth-child(even) { background: #69f0ae; }
+.pow-skill:nth-child(3n) { background: #40c4ff; }
+.contact-strip { background: #222; color: #fff; padding: 10px 16px; display: flex; justify-content: center; gap: 18px; font-size: 11px; font-weight: 700; }
+.halftone { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle, #00000008 1px, transparent 1px); background-size: 6px 6px; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="header-content">
+      <div>
+        <h1>{{NAME}}</h1>
+        <div class="subtitle">{{ROLE}}</div>
+        <div class="contact-row">
+          <span>📧 {{EMAIL}}</span>
+          <span>📱 {{PHONE}}</span>
+          <span>📍 {{LOCATION}}</span>
+          <span>🌐 {{LINKEDIN}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panels">
+    <div class="panel"><div class="halftone"></div>
+      <h2>Origin Story</h2>
+      <p style="font-size:11px;color:#555;margin-bottom:10px">{{SUMMARY}}</p>
+      <!-- EXPERIENCE_START -->
+      <div class="speech-bubble">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="panel">
+      <h2>Training Arc</h2>
+      <!-- EDUCATION_START -->
+      <div class="speech-bubble">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div class="panel full">
+      <h2>Super Powers</h2>
+      <div class="pow-skills">
+        <!-- SKILLS_START -->
+        <span class="pow-skill">{{SKILL_NAME}}</span>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+  <div class="contact-strip">
+    <span>📧 {{EMAIL}}</span>
+    <span>📱 {{PHONE}}</span>
+    <span>📍 {{LOCATION}}</span>
+    <span>🌐 {{LINKEDIN}}</span>
+  </div>
+</div>
+</body>
+</html>

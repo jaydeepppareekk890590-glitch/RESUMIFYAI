@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimalist Pro Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #ffffff; margin: 0; padding: 0; overflow: hidden; }
+.resume { background: #fff; width: 210mm; height: 297mm; padding: 16mm; box-shadow: none; overflow: hidden; }
+.header { border-bottom: 2px solid #e5e7eb; padding-bottom: 20px; margin-bottom: 24px; }
+.header h1 { font-size: 28px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #1a1a1a; }
+.header .title { font-size: 13px; color: #6b7280; letter-spacing: 3px; margin-top: 4px; text-transform: uppercase; }
+.header .contact { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: #6b7280; }
+.content { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; font-size: 13px; }
+h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #1a1a1a; margin-bottom: 12px; }
+.exp-item { margin-bottom: 16px; }
+.exp-header { display: flex; justify-content: space-between; }
+.exp-header span:first-child { font-weight: 600; color: #1a1a1a; }
+.exp-header span:last-child { color: #6b7280; }
+.exp-desc { color: #6b7280; margin-top: 4px; line-height: 1.6; }
+.skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag { padding: 4px 10px; background: #f3f4f6; border-radius: 3px; font-size: 11px; color: #374151; }
+.edu p { color: #6b7280; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="title">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>•</span><span>{{LOCATION}}</span><span>•</span><span>{{PHONE}}</span><span>•</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="content">
+    <div>
+      <div>
+        <h3>Experience</h3>
+        <!-- EXPERIENCE_START -->
+        <div class="exp-item">
+          <div class="exp-header"><span>{{EXP_TITLE}} — {{EXP_COMPANY}}</span><span>{{EXP_DATE}}</span></div>
+          <p class="exp-desc">{{EXP_DESC}}</p>
+        </div>
+        <!-- EXPERIENCE_END -->
+      </div>
+      <div style="margin-top:20px">
+        <h3>Summary</h3>
+        <p class="exp-desc">{{SUMMARY}}</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h3>Skills</h3>
+        <div class="skills">
+          <!-- SKILLS_START -->
+          <span class="skill-tag">{{SKILL_NAME}}</span>
+          <!-- SKILLS_END -->
+        </div>
+      </div>
+      <div class="edu" style="margin-top:24px">
+        <h3>Education</h3>
+        <!-- EDUCATION_START -->
+        <p>{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+        <!-- EDUCATION_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

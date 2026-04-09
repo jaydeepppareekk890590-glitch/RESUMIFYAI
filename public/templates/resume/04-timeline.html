@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeline Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fa; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; padding: 14mm; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+.header h1 { font-size: 24px; font-weight: 800; color: #1a1a1a; }
+.header .role { font-size: 12px; color: #0ea5e9; margin-top: 2px; }
+.header .contact { text-align: right; font-size: 11px; color: #6b7280; line-height: 1.8; }
+.columns { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; font-size: 12px; }
+h3 { font-size: 12px; font-weight: 700; color: #0ea5e9; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+.timeline-item { position: relative; padding-left: 16px; border-left: 2px solid #e0f2fe; margin-bottom: 16px; }
+.timeline-item::before { content: ''; position: absolute; left: -5px; top: 4px; width: 8px; height: 8px; border-radius: 50%; background: #0ea5e9; }
+.timeline-item .title { font-weight: 600; color: #1a1a1a; }
+.timeline-item .date { font-size: 10px; color: #0ea5e9; }
+.timeline-item .desc { color: #6b7280; margin-top: 4px; line-height: 1.5; }
+.cert { margin-bottom: 4px; color: #6b7280; }
+.pub { margin-bottom: 6px; color: #6b7280; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div><h1>{{NAME}}</h1><div class="role">{{ROLE}}</div></div>
+    <div class="contact">{{EMAIL}}<br>{{LINKEDIN}}<br>{{LOCATION}}</div>
+  </div>
+  <div class="columns">
+    <div>
+      <h3>Career Timeline</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="timeline-item"><div class="date">{{EXP_DATE}}</div><div class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</div><div class="desc">{{EXP_DESC}}</div></div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h3>Publications</h3>
+      <p class="pub"><strong>NeurIPS 2023</strong> — "Efficient Attention Mechanisms" (Best Paper)</p>
+      <p class="pub"><strong>ICML 2022</strong> — "Scaling Laws for Transfer Learning"</p>
+      <p class="pub"><strong>Nature ML 2021</strong> — "AI in Drug Discovery"</p>
+      <p class="pub" style="margin-top:10px">{{SUMMARY}}</p>
+      <div style="margin-top:20px">
+        <h3>Education</h3>
+        <!-- EDUCATION_START -->
+        <p class="cert">{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+        <!-- EDUCATION_END -->
+      </div>
+      <div style="margin-top:20px">
+        <h3>Skills</h3>
+        <!-- SKILLS_START -->
+        <p class="cert">{{SKILL_NAME}}</p>
+        <!-- SKILLS_END -->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

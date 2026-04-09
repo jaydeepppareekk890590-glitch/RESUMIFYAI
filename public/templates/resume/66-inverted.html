@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inverted Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Space Grotesk', sans-serif; background: #fff; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; overflow: hidden; filter: invert(1); }
+.header { background: #111; padding: 28px 36px; }
+.header h1 { font-size: 30px; color: #fff; font-weight: 700; letter-spacing: 1px; }
+.header .role { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 3px; margin-top: 4px; text-transform: uppercase; }
+.header .contact { display: flex; gap: 14px; margin-top: 10px; font-size: 10px; color: rgba(255,255,255,0.4); flex-wrap: wrap; }
+.body { padding: 22px 36px; display: grid; grid-template-columns: 1fr 200px; gap: 24px; }
+h2 { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #111; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 2px solid #111; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; font-weight: 600; color: #111; }
+.entry .meta { font-size: 10px; color: #777; margin: 2px 0; }
+.entry p { font-size: 10px; color: #555; line-height: 1.7; }
+.inv-skill { display: block; font-size: 10px; color: #333; padding: 4px 0; border-bottom: 1px solid #ddd; }
+.summary { font-size: 11px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+    <div class="contact">
+      <span>{{EMAIL}}</span><span>{{PHONE}}</span><span>{{LOCATION}}</span><span>{{LINKEDIN}}</span>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+      <h2>Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="inv-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

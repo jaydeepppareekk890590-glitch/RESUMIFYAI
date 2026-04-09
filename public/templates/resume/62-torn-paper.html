@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torn Paper Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Courier Prime', monospace; background: #e8e0d4; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #f5f0e8; overflow: hidden; position: relative; }
+.torn-top { background: #2c2418; height: 120px; position: relative; display: flex; align-items: center; padding: 0 36px; }
+.torn-top::after { content: ''; position: absolute; bottom: -15px; left: 0; right: 0; height: 30px; background: #f5f0e8; clip-path: polygon(0 100%, 3% 0, 7% 80%, 12% 10%, 17% 90%, 22% 5%, 27% 70%, 33% 15%, 38% 85%, 43% 5%, 48% 95%, 53% 10%, 58% 80%, 63% 20%, 68% 90%, 73% 5%, 78% 75%, 83% 15%, 88% 85%, 93% 0, 97% 90%, 100% 0, 100% 100%); }
+.torn-top h1 { font-family: 'Special Elite', cursive; font-size: 30px; color: #f5e8d4; }
+.torn-top .role { font-size: 11px; color: rgba(245,232,212,0.6); letter-spacing: 2px; margin-top: 4px; }
+.torn-top .contact { font-size: 10px; color: rgba(245,232,212,0.4); margin-top: 8px; }
+.body { padding: 30px 36px 20px; display: grid; grid-template-columns: 1fr 190px; gap: 24px; }
+h2 { font-family: 'Special Elite', cursive; font-size: 14px; color: #2c2418; margin-bottom: 12px; border-bottom: 2px dashed #8a7060; padding-bottom: 5px; }
+.entry { margin-bottom: 13px; }
+.entry h3 { font-size: 11px; font-weight: 700; color: #2c2418; }
+.entry .meta { font-size: 10px; color: #8a7060; margin: 2px 0; }
+.entry p { font-size: 10px; color: #5a4a38; line-height: 1.7; }
+.paper-skill { display: block; font-size: 10px; color: #5a4a38; padding: 4px 0; border-bottom: 1px dashed #d4c4a0; }
+.summary { font-size: 11px; color: #5a4a38; line-height: 1.8; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="torn-top">
+    <div>
+      <h1>{{NAME}}</h1>
+      <div class="role">{{ROLE}}</div>
+      <div class="contact">{{EMAIL}} · {{PHONE}} · {{LOCATION}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div>
+      <div class="summary">{{SUMMARY}}</div>
+      <h2>Experience</h2>
+      <!-- EXPERIENCE_START -->
+      <div class="entry">
+        <h3>{{EXP_TITLE}} — {{EXP_COMPANY}}</h3>
+        <div class="meta">{{EXP_DATE}}</div>
+        <p>{{EXP_DESC}}</p>
+      </div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div>
+      <h2>Skills</h2>
+      <!-- SKILLS_START -->
+      <span class="paper-skill">{{SKILL_NAME}}</span>
+      <!-- SKILLS_END -->
+      <h2 style="margin-top:14px">Education</h2>
+      <!-- EDUCATION_START -->
+      <div class="entry">
+        <h3>{{EDU_DEGREE}} — {{EDU_SCHOOL}}</h3>
+        <div class="meta">{{EDU_YEAR}}</div>
+      </div>
+      <!-- EDUCATION_END -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

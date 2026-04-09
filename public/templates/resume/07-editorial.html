@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editorial Resume</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: Georgia, 'Times New Roman', serif; background: #fafaf9; margin: 0; padding: 0; overflow: hidden; }
+.resume { width: 210mm; height: 297mm; background: #fff; padding: 16mm; box-shadow: 0 4px 24px rgba(0,0,0,0.06); overflow: hidden; }
+.header { text-align: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #e5e7eb; }
+.header .label { font-family: 'Segoe UI', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 6px; color: #9ca3af; margin-bottom: 8px; }
+.header h1 { font-size: 32px; font-weight: 300; letter-spacing: 2px; color: #1a1a1a; }
+.header .role { font-size: 14px; color: #6b7280; font-style: italic; margin-top: 4px; }
+.columns { column-count: 2; column-gap: 32px; font-size: 12px; }
+.section { break-inside: avoid; margin-bottom: 20px; }
+.section h3 { font-family: 'Segoe UI', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 4px; color: #1a1a1a; font-weight: 600; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid #e5e7eb; }
+.section p { color: #6b7280; line-height: 1.7; }
+.section .title { font-weight: 600; color: #1a1a1a; }
+.section .meta { color: #6b7280; font-size: 11px; }
+.appt { margin-bottom: 10px; }
+.pub { margin-bottom: 6px; }
+.pub em { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="resume">
+  <div class="header">
+    <div class="label">Curriculum Vitae</div>
+    <h1>{{NAME}}</h1>
+    <div class="role">{{ROLE}}</div>
+  </div>
+  <div class="columns">
+    <div class="section">
+      <h3>Research Focus</h3>
+      <p>{{SUMMARY}}</p>
+    </div>
+    <div class="section">
+      <h3>Appointments</h3>
+      <!-- EXPERIENCE_START -->
+      <div class="appt"><div class="title">{{EXP_TITLE}} — {{EXP_COMPANY}}</div><div class="meta">{{EXP_DATE}} • {{EXP_DESC}}</div></div>
+      <!-- EXPERIENCE_END -->
+    </div>
+    <div class="section">
+      <h3>Selected Publications</h3>
+      <p class="pub"><em>Nature Neuroscience</em> — "Synaptic pruning in adult hippocampus" (2023)</p>
+      <p class="pub"><em>Cell</em> — "CRISPR-based memory enhancement" (2021)</p>
+      <p class="pub"><em>Science</em> — "Neural correlates of déjà vu" (2019)</p>
+    </div>
+    <div class="section">
+      <h3>Education</h3>
+      <!-- EDUCATION_START -->
+      <p>{{EDU_DEGREE}} — {{EDU_SCHOOL}} ({{EDU_YEAR}})</p>
+      <!-- EDUCATION_END -->
+    </div>
+    <div class="section">
+      <h3>Contact</h3>
+      <p>{{EMAIL}} • {{PHONE}} • {{LOCATION}} • {{LINKEDIN}}</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
