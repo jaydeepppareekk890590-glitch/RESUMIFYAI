@@ -2,7 +2,7 @@
    RESUMIFY — PORTFOLIO TEMPLATE: LUXE
    File: templates/portfolio/tpl-luxe.js
    Style: 3D Book · Desk Lamp · Gold Noir · Three.js
-   Version: 2.0 — Fixed logic, refined UI, working page turns
+   Version: 3.0 — Physically correct book flip (Y-axis hinge on spine)
 ================================================================ */
 
 window.TPL_LUXE = {
@@ -119,7 +119,7 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
 .pdot.active{background:var(--gold);box-shadow:0 0 6px rgba(201,168,76,0.4);transform:scale(1.3);}
 .pdot:hover{background:rgba(201,168,76,0.5);}
 
-/* Content Panel (shown beside the book) */
+/* Content Panel */
 #content-panel{position:fixed;right:3vw;top:50%;transform:translateY(-50%) translateX(20px);width:min(34vw,400px);opacity:0;transition:all 0.5s cubic-bezier(0.16,1,0.3,1);z-index:150;pointer-events:none;}
 #content-panel.show{opacity:1;transform:translateY(-50%) translateX(0);pointer-events:all;}
 .cp-inner{background:rgba(6,4,14,0.88);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,0.15);border-radius:4px;padding:2rem 2.2rem;max-height:70vh;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,0.15) transparent;}
@@ -130,47 +130,33 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
 .cp-line{width:30px;height:1px;background:var(--gold);margin:0.8rem 0;}
 .cp-body{font-size:0.88rem;line-height:1.85;color:rgba(245,234,216,0.85);font-weight:300;}
 .cp-body p{margin-bottom:0.6rem;}
-
-/* Skill tags */
 .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-top:0.8rem;}
 .skill-tag{padding:0.35rem 0.7rem;border:1px solid rgba(201,168,76,0.22);font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;background:rgba(201,168,76,0.03);text-align:center;transition:all 0.2s;}
 .skill-tag:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
-
-/* Project items */
 .proj-item{padding:0.7rem 0;border-bottom:1px solid rgba(201,168,76,0.08);transition:padding-left 0.2s;}
 .proj-item:hover{padding-left:6px;}
 .proj-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--cream);}
 .proj-desc{font-size:0.72rem;color:rgba(245,234,216,0.7);line-height:1.5;margin-top:0.15rem;}
 .proj-tech{margin-top:0.2rem;font-family:'Space Mono',monospace;font-size:0.52rem;color:var(--gold);letter-spacing:0.05em;}
-
-/* Experience items */
 .exp-item{margin-bottom:1rem;padding-left:12px;border-left:2px solid rgba(201,168,76,0.2);transition:border-color 0.2s;}
 .exp-item:hover{border-color:var(--gold);}
 .exp-role{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--cream);}
 .exp-co{font-size:0.72rem;color:var(--gold);margin:0.12rem 0;}
 .exp-period{font-family:'Space Mono',monospace;font-size:0.55rem;color:rgba(245,234,216,0.5);letter-spacing:0.08em;}
 .exp-desc{font-size:0.72rem;color:rgba(245,234,216,0.75);margin-top:0.25rem;line-height:1.55;}
-
-/* Contact rows */
 .contact-row{display:flex;align-items:center;gap:0.9rem;padding:0.55rem 0;border-bottom:1px solid rgba(201,168,76,0.06);transition:padding-left 0.2s;}
 .contact-row:hover{padding-left:4px;}
 .contact-icon{width:30px;height:30px;border:1px solid rgba(201,168,76,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
 .contact-lbl{display:block;font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:0.05rem;}
 .contact-val{font-size:0.78rem;color:rgba(245,234,216,0.85);}
-
-/* Hire section */
 .hire-center{text-align:center;padding:1rem 0;}
 .hire-big{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,2.5vw,2.2rem);color:var(--gold);line-height:1.25;margin-bottom:0.8rem;}
 .hire-sub{font-size:0.82rem;color:rgba(245,234,216,0.7);line-height:1.8;margin-bottom:1.5rem;}
 .hire-cta{display:inline-block;padding:0.7rem 2rem;border:1px solid var(--gold);color:var(--gold);font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
 .hire-cta:hover{background:var(--gold);color:var(--deep);}
-
-/* Particles */
 #particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
 .particle{position:absolute;width:1.5px;height:1.5px;background:var(--gold);border-radius:50%;opacity:0;animation:pdrift linear infinite;}
 @keyframes pdrift{0%{transform:translateY(100vh);opacity:0}10%{opacity:0.25}85%{opacity:0.08}100%{transform:translateY(-20px) translateX(var(--dx));opacity:0}}
-
-/* Close button for panel */
 #close-panel{position:absolute;top:12px;right:14px;background:none;border:1px solid rgba(201,168,76,0.2);color:var(--gold-dim);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;z-index:10;}
 #close-panel:hover{border-color:var(--gold);color:var(--gold);}
 </style>
@@ -193,11 +179,11 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
 </div>
 
 <!-- Lamp toggle -->
-<button id="lamp-btn" onclick="toggleLamp()">💡 Lamp</button>
+<button id="lamp-btn" onclick="toggleLamp()">Lamp On</button>
 
 <!-- Open Book CTA -->
 <div id="open-cta" onclick="openBook()">
-  <div class="cta-label">Read Me</div>
+  <div class="cta-label">Open the Book</div>
   <div class="cta-circle"><span class="cta-arrow">↓</span></div>
 </div>
 
@@ -224,14 +210,9 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>
 <script>
 (function(){
-  // ─── Config ──────────────────────────────────────────
+  // ─── Config ───────────────────────────────────────────
   const PAGE_COUNT = 6;
-  const PAGE_LABELS = ['About Me','Skills','Projects','Experience','Contact',"Let's Work"];
-  const PAGE_NUMS = ['01','02','03','04','05','06'];
-
-  // Page content HTML
   const PAGE_CONTENT = [
-    // 0: About
     \`<div class="cp-num">01 — Introduction</div>
      <div class="cp-title">Hello, I'm<br>${name}</div>
      <div class="cp-line"></div>
@@ -240,7 +221,6 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
        <p>Based in ${location} · Open to new opportunities.</p>
      </div>\`,
 
-    // 1: Skills
     \`<div class="cp-num">02 — Skills</div>
      <div class="cp-title">What I<br>Work With</div>
      <div class="cp-line"></div>
@@ -248,19 +228,16 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
        ${skillNames.map(s=>`<div class="skill-tag">${s}</div>`).join('')}
      </div>\`,
 
-    // 2: Projects
     \`<div class="cp-num">03 — Work</div>
      <div class="cp-title">Selected<br>Projects</div>
      <div class="cp-line"></div>
      ${projs.map(p=>`<div class="proj-item"><div class="proj-name">${p.name}</div><div class="proj-desc">${p.desc}</div><div class="proj-tech">${p.tech}</div></div>`).join('')}\`,
 
-    // 3: Experience
     \`<div class="cp-num">04 — Journey</div>
-     <div class="cp-title">Experience<br>& Growth</div>
+     <div class="cp-title">Experience<br>&amp; Growth</div>
      <div class="cp-line"></div>
      ${exps.length ? exps.map(e=>`<div class="exp-item"><div class="exp-role">${e.role}</div><div class="exp-co">${e.co}</div><div class="exp-period">${e.period}</div><div class="exp-desc">${e.desc}</div></div>`).join('') : '<div class="cp-body">Your journey goes here.</div>'}\`,
 
-    // 4: Contact
     \`<div class="cp-num">05 — Connect</div>
      <div class="cp-title">Get In<br>Touch</div>
      <div class="cp-line"></div>
@@ -269,7 +246,6 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
      ${linkedinH?`<div class="contact-row"><div class="contact-icon">▦</div><div><span class="contact-lbl">LinkedIn</span><span class="contact-val">${linkedinH}</span></div></div>`:''}
     \`,
 
-    // 5: Hire
     \`<div class="cp-num">06 — The End</div>
      <div class="hire-center">
        <div class="hire-big">Let's Build<br>Something<br>Incredible</div>
@@ -278,14 +254,15 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
      </div>\`
   ];
 
-  // ─── Three.js Setup ─────────────────────────────────
+  // ─── Scene setup ──────────────────────────────────────
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x04030a);
-  scene.fog = new THREE.FogExp2(0x04030a, 0.025);
+  scene.fog = new THREE.FogExp2(0x04030a, 0.022);
 
-  const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
-  camera.position.set(0, 4, 8);
-  camera.lookAt(0, 1, 0);
+  // Camera positioned above-front to see the book lying flat on desk, pages arcing up
+  const camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.1, 100);
+  camera.position.set(0, 7, 8.5);
+  camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setSize(innerWidth, innerHeight);
@@ -293,166 +270,202 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 1.1;
   document.body.appendChild(renderer.domElement);
 
-  // ─── Lighting ────────────────────────────────────────
-  const ambient = new THREE.AmbientLight(0x1a1428, 0.5);
-  scene.add(ambient);
+  // ─── Lighting ─────────────────────────────────────────
+  scene.add(new THREE.AmbientLight(0x1a1428, 0.6));
 
-  // Desk lamp light
-  const lampLight = new THREE.SpotLight(0xffe8c0, 2.5, 18, Math.PI*0.32, 0.6, 1.5);
-  lampLight.position.set(-3, 6, 2);
+  const lampLight = new THREE.SpotLight(0xffe8c0, 3.0, 20, Math.PI*0.28, 0.5, 1.2);
+  lampLight.position.set(-4, 7, 3);
   lampLight.target.position.set(0, 0, 0);
   lampLight.castShadow = true;
-  lampLight.shadow.mapSize.set(1024, 1024);
-  scene.add(lampLight);
-  scene.add(lampLight.target);
+  lampLight.shadow.mapSize.set(1024,1024);
+  scene.add(lampLight, lampLight.target);
 
   let lampOn = true;
   window.toggleLamp = function(){
     lampOn = !lampOn;
-    lampLight.intensity = lampOn ? 2.5 : 0.3;
-    document.getElementById('lamp-btn').textContent = lampOn ? '💡 Lamp On' : '🌑 Lamp Off';
+    lampLight.intensity = lampOn ? 3.0 : 0.2;
+    document.getElementById('lamp-btn').textContent = lampOn ? 'Lamp On' : 'Lamp Off';
   };
 
-  // Subtle rim light
-  const rimLight = new THREE.PointLight(0xc9a84c, 0.3, 12);
-  rimLight.position.set(3, 3, -2);
+  const rimLight = new THREE.PointLight(0xc9a84c, 0.4, 14);
+  rimLight.position.set(4, 3, -2);
   scene.add(rimLight);
 
-  // ─── Desk ────────────────────────────────────────────
-  const deskGeo = new THREE.BoxGeometry(14, 0.3, 8);
+  // ─── Desk ─────────────────────────────────────────────
   const deskMat = new THREE.MeshStandardMaterial({color:0x1a1410, roughness:0.85, metalness:0.05});
-  const desk = new THREE.Mesh(deskGeo, deskMat);
+  const desk = new THREE.Mesh(new THREE.BoxGeometry(16, 0.3, 9), deskMat);
   desk.position.y = -0.15;
   desk.receiveShadow = true;
   scene.add(desk);
 
-  // Desk edge detail
-  const edgeGeo = new THREE.BoxGeometry(14.1, 0.05, 0.08);
+  // Gold desk edge
   const edgeMat = new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.7, roughness:0.3});
-  const edge = new THREE.Mesh(edgeGeo, edgeMat);
-  edge.position.set(0, 0.01, 3.96);
+  const edge = new THREE.Mesh(new THREE.BoxGeometry(16.1, 0.05, 0.08), edgeMat);
+  edge.position.set(0, 0.01, 4.46);
   scene.add(edge);
 
-  // ─── Lamp model (simple) ─────────────────────────────
+  // ─── Desk Lamp ────────────────────────────────────────
   const lampGroup = new THREE.Group();
-  // Base
-  const lBaseGeo = new THREE.CylinderGeometry(0.5, 0.6, 0.15, 16);
-  const lBaseMat = new THREE.MeshStandardMaterial({color:0x2a2218, metalness:0.6, roughness:0.4});
-  lampGroup.add(new THREE.Mesh(lBaseGeo, lBaseMat));
-  // Arm
-  const armMat = new THREE.MeshStandardMaterial({color:0x3a3028, metalness:0.5, roughness:0.4});
-  const arm1 = new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,3,8), armMat);
-  arm1.position.set(0,1.5,0);
-  arm1.rotation.z = 0.15;
-  lampGroup.add(arm1);
-  const arm2 = new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.04,2.5,8), armMat);
-  arm2.position.set(-0.4,3.5,0);
-  arm2.rotation.z = -0.5;
-  lampGroup.add(arm2);
-  // Shade
-  const shadeGeo = new THREE.ConeGeometry(0.7, 0.8, 16, 1, true);
-  const shadeMat = new THREE.MeshStandardMaterial({color:0x1a1610, metalness:0.3, roughness:0.7, side: THREE.DoubleSide});
-  const shade = new THREE.Mesh(shadeGeo, shadeMat);
-  shade.position.set(-1.2, 5.2, 0);
-  shade.rotation.z = 0.3;
+  const lMetalMat = new THREE.MeshStandardMaterial({color:0x2e2618, metalness:0.65, roughness:0.35});
+  // base disc
+  lampGroup.add(Object.assign(new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.65, 0.14, 20), lMetalMat)));
+  // vertical pole
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 3.2, 8), lMetalMat);
+  pole.position.set(0, 1.65, 0);
+  lampGroup.add(pole);
+  // angled arm
+  const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 2.6, 8), lMetalMat);
+  arm.position.set(-0.45, 3.8, 0);
+  arm.rotation.z = -0.48;
+  lampGroup.add(arm);
+  // shade cone
+  const shade = new THREE.Mesh(
+    new THREE.ConeGeometry(0.75, 0.85, 18, 1, true),
+    new THREE.MeshStandardMaterial({color:0x1c1508, metalness:0.25, roughness:0.75, side:THREE.DoubleSide})
+  );
+  shade.position.set(-1.3, 5.35, 0);
+  shade.rotation.z = 0.28;
   lampGroup.add(shade);
-  // Bulb glow
-  const bulbGeo = new THREE.SphereGeometry(0.15, 8, 8);
+  // bulb
   const bulbMat = new THREE.MeshBasicMaterial({color:0xffe8c0});
-  const bulb = new THREE.Mesh(bulbGeo, bulbMat);
-  bulb.position.set(-1.2, 4.85, 0);
+  const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.14, 10, 10), bulbMat);
+  bulb.position.set(-1.3, 4.98, 0);
   lampGroup.add(bulb);
 
-  lampGroup.position.set(-3, 0.08, 1.5);
-  lampGroup.scale.set(0.8,0.8,0.8);
+  lampGroup.position.set(-4, 0.07, 1.8);
+  lampGroup.scale.setScalar(0.82);
   scene.add(lampGroup);
 
-  // ─── Book ────────────────────────────────────────────
+  // ─── BOOK — physically correct ────────────────────────
+  /*
+    Real book anatomy when closed and lying flat on desk:
+      - Spine runs along one edge (we'll put it on the LEFT side, at x = -BOOK_W/2)
+      - Pages fan to the RIGHT from that spine
+      - Opening a page = rotating it around the Y-axis (vertical axis through spine)
+        from 0 (right side, closed) → π (left side, flipped over)
+      - The book itself is laid flat so we rotate it: x-axis -π/2 keeps it on the desk
+        but we'll just position geometry flat directly.
+  */
+
+  const BOOK_W  = 3.0;   // width of each page/cover (extends in +x from spine)
+  const BOOK_H  = 3.8;   // spine length (runs along z-axis)
+  const BOOK_D  = 0.55;  // total thickness
+  const C_THICK = 0.065; // cover thickness
+  const P_THICK = 0.011; // each page thickness
+
+  /*
+   COORDINATE SYSTEM — looking top-down:
+
+     Spine is a vertical LINE at x=0 in bookGroup local space.
+     Everything — pages and covers — extends to the RIGHT (+x).
+     Hinge  = rotation around Y-axis AT x=0 (the spine line).
+     Closed = rotation.y = 0   (page sits flat to the right)
+     Turned = rotation.y = π   (page swept full 180° to the left)
+
+     bookGroup is shifted left by BOOK_W/2 to visually center the book.
+  */
+
   const bookGroup = new THREE.Group();
-  bookGroup.position.set(0, 0.15, 0);
-
-  const BOOK_W = 2.8;
-  const BOOK_H = 3.6;
-  const BOOK_D = 0.5;
-  const COVER_THICK = 0.06;
-  const PAGE_THICK = 0.01;
-
-  // Spine
-  const spineGeo = new THREE.BoxGeometry(BOOK_D, BOOK_H, COVER_THICK);
-  const spineMat = new THREE.MeshStandardMaterial({color:0x3a2a18, roughness:0.7, metalness:0.15});
-  const spine = new THREE.Mesh(spineGeo, spineMat);
-  spine.rotation.x = -Math.PI/2;
-  spine.position.y = COVER_THICK/2;
-  bookGroup.add(spine);
-
-  // Gold spine detail
-  const spineDetail = new THREE.Mesh(
-    new THREE.BoxGeometry(BOOK_D * 0.6, BOOK_H * 0.03, COVER_THICK + 0.01),
-    new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.7, roughness:0.3})
-  );
-  spineDetail.rotation.x = -Math.PI/2;
-  spineDetail.position.set(0, COVER_THICK/2 + 0.005, 0);
-  bookGroup.add(spineDetail);
-
-  // Cover material
-  const coverMat = new THREE.MeshStandardMaterial({color:0x2a1c10, roughness:0.65, metalness:0.1});
-  const coverInnerMat = new THREE.MeshStandardMaterial({color:0xfdf6ec, roughness:0.9, metalness:0});
-  const pageMat = new THREE.MeshStandardMaterial({color:0xfdf6ec, roughness:0.95, metalness:0, side: THREE.DoubleSide});
-
-  // Back cover (static, flat)
-  const backCoverGeo = new THREE.BoxGeometry(BOOK_W, BOOK_H, COVER_THICK);
-  const backCover = new THREE.Mesh(backCoverGeo, coverMat);
-  backCover.rotation.x = -Math.PI/2;
-  backCover.position.set(BOOK_W/2 + BOOK_D/2, COVER_THICK/2, 0);
-  bookGroup.add(backCover);
-
-  // Front cover (hinged on spine)
-  const frontCoverPivot = new THREE.Group();
-  frontCoverPivot.position.set(-BOOK_D/2, COVER_THICK/2, 0);
-  const frontCover = new THREE.Mesh(backCoverGeo.clone(), coverMat.clone());
-  frontCover.rotation.x = -Math.PI/2;
-  frontCover.position.set(BOOK_W/2 + BOOK_D/2, 0, 0);
-  frontCoverPivot.add(frontCover);
-  bookGroup.add(frontCoverPivot);
-
-  // Gold emboss on front
-  const embossGeo = new THREE.PlaneGeometry(BOOK_W * 0.6, 0.08);
-  const embossMat = new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.7, roughness:0.3, side:THREE.DoubleSide});
-  const emboss = new THREE.Mesh(embossGeo, embossMat);
-  emboss.rotation.x = -Math.PI/2;
-  emboss.position.set(BOOK_W/2 + BOOK_D/2, -COVER_THICK/2 - 0.002, -BOOK_H * 0.15);
-  frontCoverPivot.add(emboss);
-
-  // Pages (hinged, each can turn)
-  const pages = [];
-  for(let i = 0; i < PAGE_COUNT; i++){
-    const pivot = new THREE.Group();
-    pivot.position.set(-BOOK_D/2, COVER_THICK/2 + (i+1)*0.005, 0);
-    const pageGeo = new THREE.BoxGeometry(BOOK_W - 0.1, BOOK_H - 0.2, PAGE_THICK);
-    const pageMesh = new THREE.Mesh(pageGeo, pageMat.clone());
-    pageMesh.rotation.x = -Math.PI/2;
-    pageMesh.position.set(BOOK_W/2 + BOOK_D/2 - 0.05, 0, 0);
-    pageMesh.castShadow = true;
-    pivot.add(pageMesh);
-    bookGroup.add(pivot);
-    pages.push({pivot, mesh: pageMesh, targetAngle: 0, currentAngle: 0});
-  }
-
-  bookGroup.rotation.x = -0.1;
+  // Center the open book on screen (spine in center, pages fan left and right)
+  bookGroup.position.set(-BOOK_W / 2, 0.0, 0);
   scene.add(bookGroup);
 
-  // ─── State ───────────────────────────────────────────
-  let bookOpen = false;
-  let currentPage = 0;
-  let targetBookRotY = 0;
-  let bookRotY = 0;
-  let targetCoverAngle = 0;
-  let coverAngle = 0;
+  // ── Materials ──
+  const coverMat = new THREE.MeshStandardMaterial({color:0x2a1c10, roughness:0.62, metalness:0.12});
+  const spineM   = new THREE.MeshStandardMaterial({color:0x3a2a18, roughness:0.7,  metalness:0.15});
+  const pageMat  = new THREE.MeshStandardMaterial({color:0xfdf6ec, roughness:0.95, metalness:0, side:THREE.DoubleSide});
+  const goldMat  = new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.72, roughness:0.28});
 
-  // Build dots
+  // ── Spine block — sits at x = -BOOK_D/2 to x = BOOK_D/2, centered on spine line ──
+  const spineMesh = new THREE.Mesh(
+    new THREE.BoxGeometry(BOOK_D, C_THICK, BOOK_H),
+    spineM
+  );
+  spineMesh.position.set(-BOOK_D / 2, C_THICK / 2, 0);
+  bookGroup.add(spineMesh);
+
+  // Gold spine stripe
+  const spineStripe = new THREE.Mesh(
+    new THREE.BoxGeometry(BOOK_D * 0.5, C_THICK + 0.005, BOOK_H * 0.04), goldMat
+  );
+  spineStripe.position.set(-BOOK_D / 2, C_THICK / 2 + 0.003, 0);
+  bookGroup.add(spineStripe);
+
+  // ── Back cover — STATIC, sits flat to the right of spine ──
+  // Its LEFT edge is at x=0 (spine), extends to x=+BOOK_W.
+  const cvGeo = new THREE.BoxGeometry(BOOK_W, C_THICK, BOOK_H);
+  const backCover = new THREE.Mesh(cvGeo, coverMat);
+  backCover.position.set(BOOK_W / 2, C_THICK / 2, 0); // center at BOOK_W/2 so left edge = 0
+  backCover.receiveShadow = true;
+  bookGroup.add(backCover);
+
+  // ── Front cover — HINGED at spine (x=0), pivot rotates around Y-axis ──
+  const frontCoverPivot = new THREE.Group();
+  // Pivot sits right on the spine line, at the top of the page stack
+  frontCoverPivot.position.set(0, C_THICK + PAGE_COUNT * P_THICK + 0.001, 0);
+  bookGroup.add(frontCoverPivot);
+
+  const frontCoverMesh = new THREE.Mesh(cvGeo, coverMat.clone());
+  // RIGHT of pivot: left edge at x=0, center at x=+BOOK_W/2
+  frontCoverMesh.position.set(BOOK_W / 2, 0, 0);
+  frontCoverMesh.castShadow = true;
+  frontCoverPivot.add(frontCoverMesh);
+
+  // Gold title emboss on front cover
+  const emboss = new THREE.Mesh(
+    new THREE.BoxGeometry(BOOK_W * 0.58, 0.006, BOOK_H * 0.04), goldMat
+  );
+  emboss.position.set(BOOK_W / 2, 0.004, -BOOK_H * 0.12);
+  frontCoverPivot.add(emboss);
+
+  const emboss2 = new THREE.Mesh(
+    new THREE.BoxGeometry(BOOK_W * 0.35, 0.006, BOOK_H * 0.026), goldMat
+  );
+  emboss2.position.set(BOOK_W / 2, 0.004, BOOK_H * 0.14);
+  frontCoverPivot.add(emboss2);
+
+  // ── Pages — each HINGED at spine (x=0) ──
+  // Page 0 = topmost (first to turn). Page N-1 = bottom.
+  const pages = [];
+  for(let i = 0; i < PAGE_COUNT; i++){
+    // Stack top-to-bottom: page 0 is highest up
+    const yOff = C_THICK + (PAGE_COUNT - 1 - i) * P_THICK;
+
+    const pivot = new THREE.Group();
+    // Pivot IS the spine line at x=0
+    pivot.position.set(0, yOff, 0);
+    bookGroup.add(pivot);
+
+    // Page mesh center at +BOOK_W/2 → left edge at x=0 (pivot/spine), right edge at x=+BOOK_W
+    const pageGeo = new THREE.BoxGeometry(BOOK_W - 0.05, P_THICK, BOOK_H - 0.12);
+    const pageMesh = new THREE.Mesh(pageGeo, pageMat.clone());
+    pageMesh.position.set((BOOK_W - 0.05) / 2, 0, 0);
+    pageMesh.castShadow = true;
+    pivot.add(pageMesh);
+
+    // Thin gold crease right at the hinge
+    const crease = new THREE.Mesh(
+      new THREE.BoxGeometry(0.006, P_THICK + 0.003, BOOK_H - 0.12),
+      goldMat
+    );
+    crease.position.set(0.003, 0, 0); // just to the right of spine
+    pivot.add(crease);
+
+    pages.push({ pivot, targetAngle: 0, currentAngle: 0 });
+  }
+
+  // ─── State ────────────────────────────────────────────
+  let bookOpen     = false;
+  let currentPage  = 0;
+  let coverTarget  = 0;   // front cover Y rotation (0=closed, -PI=open to left)
+  let coverAngle   = 0;
+  let bookTargetY  = 0;
+  let bookRotY     = 0;
+
+  // Build nav dots
   const dotsEl = document.getElementById('page-dots');
   for(let i = 0; i < PAGE_COUNT; i++){
     const dot = document.createElement('div');
@@ -487,48 +500,51 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
   function goToPage(idx){
     if(idx < 0 || idx >= PAGE_COUNT) return;
     currentPage = idx;
-    // Turn pages: pages before current are turned (angle = -PI), pages at/after current stay flat
+
+    /*
+      Pages are ordered top-to-bottom in the stack (page 0 is on top when book is closed).
+      When we flip to page N, pages 0..N-1 have been turned (angle = -PI).
+      Pages N onwards remain flat.
+    */
     for(let i = 0; i < PAGE_COUNT; i++){
-      pages[i].targetAngle = i < currentPage ? -Math.PI * 0.95 : 0;
+      // +PI = rotate counterclockwise around Z = arcs UP over the table (correct!)
+      pages[i].targetAngle = i < currentPage ? Math.PI * 0.97 : 0;
     }
+
     updateNav();
     showContent(idx);
-    // Slight book rotation based on page
-    targetBookRotY = -0.08 + (currentPage / (PAGE_COUNT-1)) * 0.16;
+
+    // Subtle book lean: when open and pages are turning, lean slightly toward viewer
+    bookTargetY = (currentPage / Math.max(PAGE_COUNT - 1, 1)) * 0.1 - 0.05;
   }
 
-  window.nextPage = function(){
-    if(currentPage < PAGE_COUNT - 1) goToPage(currentPage + 1);
-  };
-  window.prevPage = function(){
-    if(currentPage > 0) goToPage(currentPage - 1);
-  };
+  window.nextPage = function(){ if(currentPage < PAGE_COUNT-1) goToPage(currentPage+1); };
+  window.prevPage = function(){ if(currentPage > 0) goToPage(currentPage-1); };
 
   window.openBook = function(){
     if(bookOpen) return;
     bookOpen = true;
-    targetCoverAngle = -Math.PI * 0.95;
+    // +PI = arcs UP over the table surface to the left side
+    coverTarget = Math.PI * 0.96;
     document.getElementById('open-cta').classList.remove('show');
     setTimeout(()=>{
       document.getElementById('page-nav').classList.add('show');
       goToPage(0);
-    }, 600);
+    }, 700);
   };
 
-  // Keyboard
   document.addEventListener('keydown', e=>{
-    if(e.key==='ArrowRight' || e.key===' ') { e.preventDefault(); if(bookOpen) window.nextPage(); else window.openBook(); }
-    if(e.key==='ArrowLeft') { e.preventDefault(); window.prevPage(); }
+    if(e.key==='ArrowRight'||e.key===' '){ e.preventDefault(); bookOpen ? window.nextPage() : window.openBook(); }
+    if(e.key==='ArrowLeft'){ e.preventDefault(); window.prevPage(); }
   });
 
-  // ─── Resize ──────────────────────────────────────────
   window.addEventListener('resize', ()=>{
     camera.aspect = innerWidth/innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(innerWidth, innerHeight);
   });
 
-  // ─── Loader ──────────────────────────────────────────
+  // ─── Loader ───────────────────────────────────────────
   const loaderFill = document.getElementById('loader-fill');
   let loadProg = 0;
   const loadInt = setInterval(()=>{
@@ -545,34 +561,32 @@ canvas{display:block;position:fixed;inset:0;z-index:0;}
     }
   }, 45);
 
-  // ─── Render Loop ─────────────────────────────────────
+  // ─── Render loop ──────────────────────────────────────
   const clock = new THREE.Clock();
+  const LERP = 0.065;
 
   function animate(){
     requestAnimationFrame(animate);
     const t = clock.getElapsedTime();
 
-    // Smooth cover opening
-    coverAngle += (targetCoverAngle - coverAngle) * 0.06;
+    // Front cover hinge: Z-axis rotation — page arcs UP and over
+    coverAngle += (coverTarget - coverAngle) * LERP;
     frontCoverPivot.rotation.z = coverAngle;
 
-    // Smooth page turning
+    // Page turns: each pivots around Z-axis at spine (arc UP and over to left)
     pages.forEach(p=>{
-      p.currentAngle += (p.targetAngle - p.currentAngle) * 0.07;
+      p.currentAngle += (p.targetAngle - p.currentAngle) * LERP;
       p.pivot.rotation.z = p.currentAngle;
     });
 
-    // Book rotation
-    bookRotY += (targetBookRotY - bookRotY) * 0.04;
-    bookGroup.rotation.y = bookRotY + Math.sin(t * 0.3) * 0.01;
+    // Gentle book breathe + subtle yaw
+    bookRotY += (bookTargetY - bookRotY) * 0.04;
+    bookGroup.rotation.y = bookRotY + Math.sin(t * 0.25) * 0.008;
+    bookGroup.position.y = Math.sin(t * 0.7) * 0.008;
 
-    // Subtle book breathing
-    bookGroup.position.y = 0.15 + Math.sin(t * 0.8) * 0.01;
-
-    // Bulb flicker
+    // Lamp flicker
     if(lampOn){
-      bulbMat.opacity = 0.85 + Math.sin(t * 8) * 0.05;
-      lampLight.intensity = 2.5 + Math.sin(t * 6) * 0.1;
+      lampLight.intensity = 3.0 + Math.sin(t * 7) * 0.12;
     }
 
     renderer.render(scene, camera);

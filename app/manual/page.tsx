@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { saveResume, getResume, getUserCredits, getPlanLimits } from "@/lib/firebase";
 import { RESUME_TEMPLATES, RESUME_CATEGORIES } from "@/lib/template-registry";
 import { generateResumeHTML } from "@/lib/resume-html-generator";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 interface Exp { title: string; company: string; duration: string; description: string; }
 interface Edu { degree: string; institution: string; year: string; }
@@ -400,7 +401,7 @@ function ManualBuilderContent() {
 
 export default function ManualPage() {
   return (
-    <Suspense fallback={<div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}><div style={{ color: "var(--muted)" }}>Loading...</div></div>}>
+    <Suspense fallback={<GlobalLoader />}>
       <ManualBuilderContent />
     </Suspense>
   );

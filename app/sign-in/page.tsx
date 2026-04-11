@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { sendEmailLink, completeEmailSignIn, checkIsEmailLink } from "@/lib/firebase";
 import { useAuth } from "@/lib/useDevUser";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 function SignInContent() {
   const router = useRouter();
@@ -67,15 +68,7 @@ function SignInContent() {
     }
   };
 
-  if (loading || (user && !error)) {
-    return (
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#03030a" }}>
-        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 14 }}>
-          <i className="fas fa-spinner fa-spin" style={{ marginRight: 8 }} />Loading...
-        </div>
-      </div>
-    );
-  }
+  if (loading || (user && !error)) return <GlobalLoader />;
 
   return (
     <div style={{
@@ -270,7 +263,7 @@ function SignInContent() {
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ height: "100vh", background: "#03030a" }} />}>
+    <Suspense fallback={<GlobalLoader />}>
       <SignInContent />
     </Suspense>
   );

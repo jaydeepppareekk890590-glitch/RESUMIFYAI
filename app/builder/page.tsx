@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import { useDevUser } from "@/lib/useDevUser";
 import { useSearchParams } from "next/navigation";
 import Sidebar from "@/components/ui/Sidebar";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 import RainbowButton from "@/components/ui/RainbowButton";
 import { saveResume, getResume, deductCredit, getUserCredits, getPlanLimits } from "@/lib/firebase";
 import { RESUME_TEMPLATES, RESUME_CATEGORIES } from "@/lib/template-registry";
@@ -596,7 +597,7 @@ User: ${prompt}`);
 
 export default function BuilderPage() {
   return (
-    <Suspense fallback={<div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}><div style={{ color: "var(--muted)" }}>Loading...</div></div>}>
+    <Suspense fallback={<GlobalLoader />}>
       <BuilderContent />
     </Suspense>
   );

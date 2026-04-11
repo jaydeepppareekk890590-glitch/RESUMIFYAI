@@ -234,7 +234,7 @@ function FeatureSection({
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 100, background: `${color}12`, border: `1px solid ${color}28`, marginBottom: 24, fontSize: 11, letterSpacing: ".12em", color, fontWeight: 800, textTransform: "uppercase" as const }}>
               {badge}
             </div>
-            <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(28px,4vw,52px)", color: "#fff", lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,52px)", color: "#fff", lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>
               {headline}<br />
               <span style={{ background: `linear-gradient(135deg,${color},${index % 2 === 0 ? "#06b6d4" : "#a78bfa"})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{highlight}</span>
             </h2>
@@ -372,7 +372,7 @@ export default function LandingPage() {
 
   const featureSections = [
     {
-      badge: "🎯 ATS Scanner",
+      badge: "ATS Scanner",
       color: "#7c3aed",
       headline: "See exactly why you're",
       highlight: "being rejected — and fix it.",
@@ -407,7 +407,7 @@ export default function LandingPage() {
       ),
     },
     {
-      badge: "✨ AI Resume Builder",
+      badge: "AI Resume Builder",
       color: "#06b6d4",
       headline: "Describe yourself in plain language.",
       highlight: "Get a perfect resume instantly.",
@@ -446,7 +446,7 @@ export default function LandingPage() {
       ),
     },
     {
-      badge: "✍️ AI Cover Letter",
+      badge: "AI Cover Letter",
       color: "#22c55e",
       headline: "Cover letters that actually",
       highlight: "get read. Every time.",
@@ -483,7 +483,7 @@ export default function LandingPage() {
       )}
 
       {showMain && (
-        <div style={{ background: "#05050a", minHeight: "100vh", position: "relative", overflowX: "hidden", color: "#fff", fontFamily: "Inter,sans-serif" }}>
+        <div style={{ background: "#05050a", minHeight: "100vh", position: "relative", overflowX: "hidden", color: "#fff", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
           <ParticleMesh mx={mx} my={my} />
 
           {/* Fixed orbs */}
@@ -494,7 +494,7 @@ export default function LandingPage() {
           <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 clamp(24px,4vw,64px)", height: 64, background: sy > 30 ? "rgba(5,5,10,.88)" : "transparent", backdropFilter: sy > 30 ? "blur(28px) saturate(1.8)" : "none", borderBottom: sy > 30 ? "1px solid rgba(255,255,255,.055)" : "1px solid transparent", position: "fixed", top: 0, left: 0, right: 0, zIndex: 200, transition: "all .45s cubic-bezier(.16,1,.3,1)" }}>
             <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
               <Image src="/logo.avif" alt="Resumify" width={32} height={32} style={{ borderRadius: 9, display: "block" }} />
-              <span style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: 19, letterSpacing: ".06em", color: "#fff" }}>
+              <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 900, fontSize: 19, letterSpacing: ".06em", color: "#fff" }}>
                 RESUM<span style={{ background: "linear-gradient(90deg,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>IFY</span>
               </span>
             </Link>
@@ -522,7 +522,7 @@ export default function LandingPage() {
                       <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", display: "inline-block", animation: "pulse-dot 2s infinite", boxShadow: "0 0 8px #22c55e" }} />
                       ATS-Optimized · AI-Powered · Free to Start
                     </div>
-                    <h1 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(46px,7.5vw,94px)", lineHeight: .96, letterSpacing: "-.04em", color: "#fff", marginBottom: 26 }}>
+                    <h1 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(46px,7.5vw,94px)", lineHeight: .96, letterSpacing: "-.04em", color: "#fff", marginBottom: 26 }}>
                       Your Resume.<br />
                       <span style={{ background: "linear-gradient(135deg,#c4b5fd,#7c3aed 42%,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI-Built.</span><br />
                       <Typewriter words={["Hired.", "Perfected.", "Promoted.", "Unstoppable."]} />
@@ -534,7 +534,7 @@ export default function LandingPage() {
                       <a href="/dashboard" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 34px", borderRadius: 12, background: "linear-gradient(135deg,#7c3aed,#06b6d4)", color: "#fff", fontWeight: 800, fontSize: 14, textDecoration: "none", boxShadow: "0 0 36px rgba(124,58,237,.38)", transition: "transform .2s,box-shadow .2s", letterSpacing: ".02em" }}
                         onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.boxShadow = "0 0 56px rgba(124,58,237,.55)"; }}
                         onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "0 0 36px rgba(124,58,237,.38)"; }}>
-                        ⚡ Build My Resume — Free
+                        Build My Resume — Free
                       </a>
                       <a href="#features" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "15px 26px", borderRadius: 12, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.09)", color: "rgba(255,255,255,.7)", fontWeight: 600, fontSize: 14, textDecoration: "none", transition: "background .2s" }}
                         onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,.08)"} onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,.04)"}>
@@ -600,7 +600,7 @@ export default function LandingPage() {
             <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
               <Reveal>
                 <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#f87171", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 20 }}>The Hidden Problem</div>
-                <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(30px,5vw,62px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.08, marginBottom: 22 }}>
+                <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,5vw,62px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.08, marginBottom: 22 }}>
                   <span style={{ background: "linear-gradient(90deg,#f87171,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>75% of resumes</span> are rejected<br />before a human ever sees them.
                 </h2>
                 <p style={{ fontSize: 17, color: "rgba(255,255,255,.38)", maxWidth: 600, margin: "0 auto 64px", lineHeight: 1.82 }}>
@@ -608,20 +608,20 @@ export default function LandingPage() {
                 </p>
               </Reveal>
 
-              {/* ATS funnel — clean visual */}
+              {/* ATS funnel — clean minimal steps */}
               <Reveal delay={.15}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 0, flexWrap: "wrap" }}>
                   {[
-                    { icon: "📄", label: "You Apply", sub: "Resume submitted", color: "rgba(255,255,255,.12)", glow: "#ffffff" },
-                    { icon: "🤖", label: "ATS Parses", sub: "Robot reads it", color: "rgba(251,191,36,.12)", glow: "#fbbf24" },
-                    { icon: "🔍", label: "Keywords", sub: "Match or reject", color: "rgba(6,182,212,.12)", glow: "#06b6d4" },
-                    { icon: "📊", label: "Scored", sub: "Ranked & filtered", color: "rgba(124,58,237,.12)", glow: "#7c3aed" },
-                    { icon: "✅", label: "HR Sees You", sub: "Interview request", color: "rgba(34,197,94,.12)", glow: "#22c55e" },
+                    { num: "01", label: "You Apply", sub: "Resume submitted", color: "rgba(255,255,255,.10)", accent: "rgba(255,255,255,.5)", glow: "#ffffff" },
+                    { num: "02", label: "ATS Parses", sub: "System reads it", color: "rgba(251,191,36,.08)", accent: "#fbbf24", glow: "#fbbf24" },
+                    { num: "03", label: "Keywords", sub: "Match or reject", color: "rgba(6,182,212,.08)", accent: "#06b6d4", glow: "#06b6d4" },
+                    { num: "04", label: "Ranked", sub: "Scored & filtered", color: "rgba(124,58,237,.08)", accent: "#7c3aed", glow: "#7c3aed" },
+                    { num: "05", label: "HR Sees You", sub: "Interview request", color: "rgba(34,197,94,.08)", accent: "#22c55e", glow: "#22c55e" },
                   ].map((s, i) => (
                     <div key={i} style={{ display: "flex", alignItems: "center" }}>
                       <Reveal delay={i * .12} from="scale">
-                        <div style={{ textAlign: "center", padding: "22px 16px", borderRadius: 18, background: s.color, border: "1px solid rgba(255,255,255,.07)", width: 110, boxShadow: `0 0 24px ${s.glow}0e` }}>
-                          <div style={{ fontSize: 32, marginBottom: 9 }}>{s.icon}</div>
+                        <div style={{ textAlign: "center", padding: "22px 16px", borderRadius: 18, background: s.color, border: "1px solid rgba(255,255,255,.07)", width: 110 }}>
+                          <div style={{ fontSize: 22, fontWeight: 800, color: s.accent, marginBottom: 9, fontFamily: "'Plus Jakarta Sans',sans-serif", letterSpacing: "-.02em" }}>{s.num}</div>
                           <div style={{ fontSize: 11.5, color: "rgba(255,255,255,.7)", fontWeight: 700, lineHeight: 1.4 }}>{s.label}</div>
                           <div style={{ fontSize: 9.5, color: "rgba(255,255,255,.28)", marginTop: 4 }}>{s.sub}</div>
                         </div>
@@ -634,8 +634,7 @@ export default function LandingPage() {
 
               <Reveal delay={.3}>
                 <div style={{ marginTop: 52, display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 28px", borderRadius: 100, background: "rgba(124,58,237,.08)", border: "1px solid rgba(124,58,237,.18)" }}>
-                  <span style={{ fontSize: 14 }}>💡</span>
-                  <span style={{ fontSize: 14, color: "rgba(255,255,255,.65)" }}>Resumify's ATS engine is specifically built to help you <strong style={{ color: "#a78bfa" }}>pass every filter</strong> before you apply.</span>
+                  <span style={{ fontSize: 14, color: "rgba(255,255,255,.65)" }}>Resumify's ATS engine is built to help you <strong style={{ color: "#a78bfa" }}>pass every filter</strong> before you apply.</span>
                 </div>
               </Reveal>
             </div>
@@ -654,7 +653,7 @@ export default function LandingPage() {
               <Reveal>
                 <div style={{ textAlign: "center", marginBottom: 70 }}>
                   <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#06b6d4", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 16 }}>How It Works</div>
-                  <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(28px,4.5vw,56px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.08 }}>
+                  <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4.5vw,56px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.08 }}>
                     From blank page to job offer.<br />
                     <span style={{ background: "linear-gradient(90deg,#a78bfa,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>In under 5 minutes.</span>
                   </h2>
@@ -664,52 +663,90 @@ export default function LandingPage() {
             </div>
           </section>
 
-          {/* ══════════ PORTFOLIO SHOWCASE ══════════ */}
+          {/* ══════════ PORTFOLIO — DESCRIPTIVE ══════════ */}
           <section id="portfolio" style={{ padding: "120px clamp(24px,5vw,64px)", position: "relative", zIndex: 1, overflow: "hidden" }}>
-            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 1100, height: 600, background: "radial-gradient(ellipse,rgba(6,182,212,.06) 0%,transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 1100, height: 600, background: "radial-gradient(ellipse,rgba(6,182,212,.05) 0%,transparent 65%)", filter: "blur(80px)", pointerEvents: "none" }} />
             <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
-              <Reveal>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 24, marginBottom: 20 }}>
-                  <div>
-                    <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#06b6d4", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 16 }}>Portfolio Builder</div>
-                    <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(28px,4.5vw,58px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.05 }}>
-                      Your portfolio,<br />
-                      <span style={{ background: "linear-gradient(90deg,#06b6d4,#22c55e)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>built in 60 seconds.</span>
-                    </h2>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <div style={{ fontFamily: "Outfit,sans-serif", fontSize: 56, fontWeight: 900, lineHeight: 1, background: "linear-gradient(135deg,#06b6d4,#a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>12+</div>
-                    <div style={{ fontSize: 13, color: "rgba(255,255,255,.35)", marginTop: 4 }}>Cinematic Templates</div>
-                  </div>
-                </div>
-              </Reveal>
 
-              <Reveal delay={.1}>
-                <p style={{ fontSize: 16, color: "rgba(255,255,255,.38)", maxWidth: 560, marginBottom: 36, lineHeight: 1.8 }}>
-                  From underwater worlds to space stations, luxury dark themes to minimal classics — every template is fully animated, mobile-responsive, and auto-fills instantly from your resume data. Share with one link. No code needed.
+              {/* Header */}
+              <Reveal>
+                <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#06b6d4", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 20 }}>Portfolio Builder</div>
+                <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,4.5vw,60px)", color: "#fff", letterSpacing: "-.03em", lineHeight: 1.08, marginBottom: 22, maxWidth: 680 }}>
+                  Your work deserves a home that<br />
+                  <span style={{ background: "linear-gradient(90deg,#06b6d4,#22c55e)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>speaks before you do.</span>
+                </h2>
+                <p style={{ fontSize: 17, color: "rgba(255,255,255,.4)", maxWidth: 600, lineHeight: 1.85, marginBottom: 72 }}>
+                  A resume tells recruiters what you've done. A portfolio shows them who you are. With Resumify, you get a cinematic, fully interactive portfolio site — built automatically from your resume data, live in under a minute, no design skills needed.
                 </p>
               </Reveal>
 
-              <Reveal delay={.12}>
-                <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 48 }}>
-                  {["🎬 3D animated worlds", "📱 Fully responsive", "🔗 One-link share", "⚡ Auto-fills from resume", "🌐 Custom domain", "🎨 Live drag-and-drop editor"].map(f => (
-                    <span key={f} style={{ padding: "7px 16px", borderRadius: 100, background: "rgba(6,182,212,.07)", border: "1px solid rgba(6,182,212,.15)", fontSize: 12, color: "rgba(255,255,255,.62)", fontWeight: 600 }}>{f}</span>
-                  ))}
-                </div>
-              </Reveal>
-
-              {/* Template grid — 4 columns, uniform */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
-                {templates.map((t, i) => <TplCard key={t.name} {...t} delay={i * .05} />)}
+              {/* Feature rows */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 2 }}>
+                {[
+                  {
+                    num: "01",
+                    title: "Auto-filled from your resume",
+                    desc: "Every project, role, and skill you've entered into your resume is automatically pulled into your portfolio. No copy-pasting. No reformatting. Just pick a design and your story is already there.",
+                    accent: "#06b6d4",
+                  },
+                  {
+                    num: "02",
+                    title: "12+ cinematic themes",
+                    desc: "Choose from a library of visually distinct, fully animated portfolio themes — from clean editorial layouts to immersive 3D environments. Each one is mobile-optimized and built to impress.",
+                    accent: "#a78bfa",
+                  },
+                  {
+                    num: "03",
+                    title: "One shareable link",
+                    desc: "Your portfolio lives at a clean URL you can put on your resume, LinkedIn, or email signature. No login required to view. Share it with anyone, anywhere — it just works.",
+                    accent: "#22c55e",
+                  },
+                  {
+                    num: "04",
+                    title: "Live drag-and-drop editor",
+                    desc: "Rearrange sections, change colors, swap themes, and tweak every line of text right in the browser. See changes live as you make them. What you see is exactly what visitors get.",
+                    accent: "#fbbf24",
+                  },
+                  {
+                    num: "05",
+                    title: "Custom domain support",
+                    desc: "On the Pro plan, connect your own domain name — yourname.com — and turn your portfolio into a professional personal brand. No hosting fees, no extra setup.",
+                    accent: "#f87171",
+                  },
+                  {
+                    num: "06",
+                    title: "Built to get noticed",
+                    desc: "Most candidates send a PDF and hope for a callback. A live, interactive portfolio puts a face to your name before the interview. Recruiters remember candidates who stand out — be that candidate.",
+                    accent: "#06b6d4",
+                  },
+                ].map((item, i) => (
+                  <Reveal key={item.num} delay={i * .07} from="bottom">
+                    <div style={{
+                      padding: "36px 32px",
+                      borderTop: `1px solid rgba(255,255,255,.06)`,
+                      borderLeft: i % 2 === 0 ? "none" : "none",
+                      position: "relative",
+                      transition: "background .3s",
+                    }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,.02)"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "transparent"; }}
+                    >
+                      <div style={{ fontSize: 11, fontWeight: 800, color: item.accent, letterSpacing: ".1em", marginBottom: 18, fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{item.num}</div>
+                      <h3 style={{ fontSize: "clamp(16px,2vw,20px)", fontWeight: 700, color: "#fff", marginBottom: 14, lineHeight: 1.3, fontFamily: "'Plus Jakarta Sans',sans-serif", letterSpacing: "-.01em" }}>{item.title}</h3>
+                      <p style={{ fontSize: 14.5, color: "rgba(255,255,255,.38)", lineHeight: 1.82 }}>{item.desc}</p>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
 
               <Reveal delay={.3}>
-                <div style={{ textAlign: "center", marginTop: 48 }}>
-                  <a href="/portfolio" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 32px", borderRadius: 12, background: "rgba(6,182,212,.08)", border: "1px solid rgba(6,182,212,.2)", color: "#06b6d4", fontWeight: 700, fontSize: 14, textDecoration: "none", transition: "all .22s" }}
-                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(6,182,212,.15)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(6,182,212,.08)"; e.currentTarget.style.transform = "none"; }}>
-                    Browse All 12 Templates →
+                <div style={{ marginTop: 64, display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+                  <a href="/portfolio" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 32px", borderRadius: 12, background: "rgba(6,182,212,.1)", border: "1px solid rgba(6,182,212,.25)", color: "#06b6d4", fontWeight: 700, fontSize: 14, textDecoration: "none", transition: "all .22s" }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(6,182,212,.18)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(6,182,212,.1)"; e.currentTarget.style.transform = "none"; }}>
+                    Build Your Portfolio →
                   </a>
+                  <span style={{ fontSize: 13, color: "rgba(255,255,255,.22)", fontStyle: "italic" }}>Free on all plans · No design skills needed</span>
                 </div>
               </Reveal>
             </div>
@@ -721,7 +758,7 @@ export default function LandingPage() {
               <Reveal>
                 <div style={{ textAlign: "center", marginBottom: 72 }}>
                   <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#a78bfa", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 16 }}>Pricing</div>
-                  <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(30px,4.5vw,58px)", color: "#fff", lineHeight: 1.05, letterSpacing: "-.03em", marginBottom: 16 }}>
+                  <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,4.5vw,58px)", color: "#fff", lineHeight: 1.05, letterSpacing: "-.03em", marginBottom: 16 }}>
                     Start free.<br />
                     <span style={{ background: "linear-gradient(90deg,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Upgrade when you land it.</span>
                   </h2>
@@ -750,9 +787,8 @@ export default function LandingPage() {
               <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "28px 28px", pointerEvents: "none", WebkitMaskImage: "radial-gradient(ellipse 65% 75% at 50% 50%,black,transparent)" }} />
               <Reveal>
                 <div style={{ position: "relative", maxWidth: 700, margin: "0 auto" }}>
-                  <div style={{ fontSize: 72, marginBottom: 24, animation: "float 4s ease-in-out infinite" }}>🚀</div>
                   <div style={{ fontSize: 10, letterSpacing: ".18em", color: "#7c3aed", fontWeight: 800, textTransform: "uppercase" as const, marginBottom: 24 }}>Start Today — Free</div>
-                  <h2 style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: "clamp(36px,6vw,76px)", color: "#fff", lineHeight: 1.0, letterSpacing: "-.04em", marginBottom: 24 }}>
+                  <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,6vw,76px)", color: "#fff", lineHeight: 1.0, letterSpacing: "-.04em", marginBottom: 24 }}>
                     Ready to land<br />
                     <span style={{ background: "linear-gradient(135deg,#c4b5fd,#7c3aed 42%,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>your dream job?</span>
                   </h2>
@@ -778,7 +814,7 @@ export default function LandingPage() {
                 <div style={{ maxWidth: 260 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 14 }}>
                     <Image src="/logo.avif" alt="Resumify" width={30} height={30} style={{ borderRadius: 8, display: "block" }} />
-                    <span style={{ fontFamily: "Outfit,sans-serif", fontWeight: 900, fontSize: 18, letterSpacing: ".06em", color: "#fff" }}>
+                    <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 900, fontSize: 18, letterSpacing: ".06em", color: "#fff" }}>
                       RESUM<span style={{ background: "linear-gradient(90deg,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>IFY</span>
                     </span>
                   </div>
@@ -810,11 +846,11 @@ export default function LandingPage() {
           </footer>
 
           <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
             @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.55)}}
             @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
             @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-            @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+            @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
             *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
             ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}
             ::-webkit-scrollbar-thumb{background:rgba(124,58,237,.35);border-radius:2px}

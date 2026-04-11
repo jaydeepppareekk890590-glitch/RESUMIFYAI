@@ -2,6 +2,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { getPortfolio } from "@/lib/firebase";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 function PortfolioViewContent() {
   const searchParams = useSearchParams();
@@ -177,15 +178,7 @@ ${projects.length ? `
     }).catch(() => setError("Failed to load portfolio")).finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0a14" }}>
-      <div style={{ textAlign: "center" }}>
-        <div style={{ width: 36, height: 36, borderRadius: "50%", border: "3px solid rgba(124,58,237,0.2)", borderTopColor: "#7c3aed", animation: "spin 0.8s linear infinite", margin: "0 auto 12px" }} />
-        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>Loading portfolio...</div>
-      </div>
-      <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
-    </div>
-  );
+  if (loading) return <GlobalLoader />;
 
   if (error) return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0a14" }}>
@@ -204,11 +197,7 @@ ${projects.length ? `
 
 export default function PortfolioViewPage() {
   return (
-    <Suspense fallback={
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0a14" }}>
-        <div style={{ color: "rgba(255,255,255,0.4)" }}>Loading...</div>
-      </div>
-    }>
+    <Suspense fallback={<GlobalLoader />}>
       <PortfolioViewContent />
     </Suspense>
   );

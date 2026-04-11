@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { saveATSScore, deductCredit, getResume } from "@/lib/firebase";
 import { resumeDataToText } from "@/lib/ats-algorithm";
 
-const GlowingFish = dynamic(() => import("@/components/ui/GlowingFish"), { ssr: false });
+import GlobalLoader from "@/components/ui/GlobalLoader";
 
 interface ScoreParam {
   score: number;
@@ -67,7 +67,7 @@ async function geminiCall(prompt: string): Promise<string> {
 
 export default function AnalyzerPage() {
   return (
-    <Suspense fallback={<div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}><div style={{ color: "var(--muted)" }}>Loading...</div></div>}>
+    <Suspense fallback={<GlobalLoader />}>
       <AnalyzerContent />
     </Suspense>
   );
@@ -397,7 +397,7 @@ ${fileText.slice(0, 7000)}`;
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: result ? "1fr" : "1fr 1fr", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, maxWidth: result ? "100%" : 860, margin: result ? "0" : "0 auto" }}>
 
           {/* LEFT: Input Card */}
           <div>
@@ -518,29 +518,7 @@ ${fileText.slice(0, 7000)}`;
             </div>
           </div>
 
-          {/* RIGHT: Fish when no results */}
-          {!result && !analyzing && (
-            <div style={{
-              background: "var(--surface)", border: "1px solid var(--border)",
-              borderRadius: 20, overflow: "hidden", position: "relative", minHeight: 400,
-            }}>
-              <div style={{ position: "absolute", inset: 0 }}>
-                <GlowingFish count={2} />
-              </div>
-              <div style={{
-                position: "absolute", bottom: 0, left: 0, right: 0,
-                background: "linear-gradient(to top, rgba(10,10,15,0.9) 0%, transparent 100%)",
-                padding: "32px 24px 24px",
-              }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "#fff", marginBottom: 6 }}>
-                  Upload your resume to see the magic
-                </div>
-                <p style={{ fontSize: 12, color: "var(--muted)", lineHeight: 1.6 }}>
-                  Our AI-powered ATS engine scores keywords, job title fit, experience, education, achievements, formatting, and certifications — with actionable improvement tips.
-                </p>
-              </div>
-            </div>
-          )}
+
 
           {analyzing && (
             <div style={{

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import { useDevUser } from "@/lib/useDevUser";
 import { useSearchParams } from "next/navigation";
 import Sidebar from "@/components/ui/Sidebar";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 import RainbowButton from "@/components/ui/RainbowButton";
 import { savePortfolio, getPortfolio, deductCredit, getUserResumes, getUserCredits, getPlanLimits } from "@/lib/firebase";
 import {
@@ -774,7 +775,7 @@ ${data.phone ? `<a href="tel:${data.phone}" style="padding:12px 24px;border-radi
 
 export default function PortfolioPage() {
   return (
-    <Suspense fallback={<div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}><div style={{ color: "var(--muted)" }}>Loading...</div></div>}>
+    <Suspense fallback={<GlobalLoader />}>
       <PortfolioContent />
     </Suspense>
   );

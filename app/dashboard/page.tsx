@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useDevUser } from "@/lib/useDevUser";
 import Link from "next/link";
 import Sidebar from "@/components/ui/Sidebar";
+import GlobalLoader from "@/components/ui/GlobalLoader";
 import RainbowButton from "@/components/ui/RainbowButton";
 import {
   getUserResumes, getUserPortfolios, getATSHistory,
@@ -317,24 +318,7 @@ ${text.slice(0, 4000)}`;
     return { background: "rgba(124,58,237,0.1)", color: "var(--violet3)", border: "1px solid rgba(124,58,237,0.25)" };
   };
 
-  if (loading) {
-    return (
-      <div style={{ display: "flex", minHeight: "100vh" }}>
-        <Sidebar />
-        <div className="main-content" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ textAlign: "center" }}>
-            <div style={{
-              width: 40, height: 40, borderRadius: "50%",
-              border: "3px solid rgba(124,58,237,0.2)", borderTopColor: "#7c3aed",
-              animation: "spin 0.8s linear infinite", margin: "0 auto 16px",
-            }} />
-            <div style={{ color: "var(--muted)", fontSize: 13 }}>Loading your dashboard...</div>
-          </div>
-          <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
-        </div>
-      </div>
-    );
-  }
+  if (loading) return <GlobalLoader />;
 
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
