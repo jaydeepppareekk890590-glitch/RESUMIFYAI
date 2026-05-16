@@ -6,7 +6,7 @@ import { sendEmailLink, completeEmailSignIn, checkIsEmailLink } from "@/lib/fire
 import { useAuth } from "@/lib/useDevUser";
 import GlobalLoader from "@/components/ui/GlobalLoader";
 
-function SignInContent() {
+function SignInContent() { 
   const router = useRouter();
   const { user, loading } = useAuth();
   const [step, setStep] = useState<"email" | "sent" | "confirming">("email");
